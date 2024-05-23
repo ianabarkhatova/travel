@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/travel/static/css/main.e6c13ad2.css",
+    "main.js": "/travel/static/js/main.91dbc0d9.js",
+    "static/js/787.25eaef86.chunk.js": "/travel/static/js/787.25eaef86.chunk.js",
+    "static/media/icons-sprite.svg": "/travel/static/media/icons-sprite.63eb1fa457bab5e28109ed54bef31d5e.svg",
+    "static/media/romantic-4.png": "/travel/static/media/romantic-4.fd9c681ae6f65e522474.png",
+    "static/media/favourite-1.webp": "/travel/static/media/favourite-1.ea1d414acba6ebc6faf8.webp",
+    "static/media/romantic-3.webp": "/travel/static/media/romantic-3.b9f5c11808fc828f43fd.webp",
+    "static/media/service-4.png": "/travel/static/media/service-4.1592de63b74148618e36.png",
+    "static/media/romantic-1.webp": "/travel/static/media/romantic-1.7b7dc1a99687a787d894.webp",
+    "static/media/service-2.png": "/travel/static/media/service-2.d0aab0ad48a44eed4332.png",
+    "static/media/service-3.png": "/travel/static/media/service-3.3b9ca18546d556770b91.png",
+    "static/media/romantic-2.webp": "/travel/static/media/romantic-2.17b008917ffc81919c88.webp",
+    "static/media/service-1.png": "/travel/static/media/service-1.f13504ed815363cf98b4.png",
+    "static/media/face-6.png": "/travel/static/media/face-6.1b2d375fa21134856264.png",
+    "static/media/favourite-2.webp": "/travel/static/media/favourite-2.546592e5187426b69bb8.webp",
+    "static/media/face-4.png": "/travel/static/media/face-4.4db76294c3db87147769.png",
+    "static/media/face-2.png": "/travel/static/media/face-2.34343cd79562707fdd04.png",
+    "static/media/face-3.png": "/travel/static/media/face-3.1913b44f1049948e03fe.png",
+    "static/media/face-1.png": "/travel/static/media/face-1.0f0b0cf46363523719b0.png",
+    "static/media/face-5.png": "/travel/static/media/face-5.428416520c7327779c49.png",
+    "index.html": "/travel/index.html",
+    "main.e6c13ad2.css.map": "/travel/static/css/main.e6c13ad2.css.map",
+    "main.91dbc0d9.js.map": "/travel/static/js/main.91dbc0d9.js.map",
+    "787.25eaef86.chunk.js.map": "/travel/static/js/787.25eaef86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.91dbc0d9.js"
+  ]
+}
