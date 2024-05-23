@@ -3,17 +3,16 @@ import image2 from "../../../../assets/images/favourite/favourite-1.webp";
 import {TripTitle} from "../../../../components/common/TripTitle";
 import styled from "styled-components";
 import {Icon} from "../../../../components/icon/Icon";
-import {Button} from "../../../../components/common/Button";
 import {FlexWrapper} from "../../../../components/common/FlexWrapper";
 
 export const TripCard = () => {
     return (
         <StyledTripCard>
             <FlexWrapper direction={"column"}>
-                <StyledImage src={image2}/>
+                <StyledImage src={image2} alt="city on the ocean shore"/>
                 <TripTitle>Trip to Hawaii </TripTitle>
-                <StyledText>14-29 June</StyledText>
-                <StyledText>by JR Martin</StyledText>
+                <StyledDate>14-29 June</StyledDate>
+                <StyledName>by JR Martin</StyledName>
 
                 <StyledTripList>
                     <StyledTripLink>
@@ -65,13 +64,25 @@ const StyledTripCard = styled.div`
     border-radius: 26px;
     box-shadow: 0px 1.85px 3.15px 0px rgba(0, 0, 0, 0),0px 8.15px 6.52px 0px rgba(0, 0, 0, 0.01),0px 20px 13px 0px rgba(0, 0, 0, 0.01),0px 38.52px 25.48px 0px rgba(0, 0, 0, 0.01),0px 64.81px 46.85px 0px rgba(0, 0, 0, 0.02),0px 100px 80px 0px rgba(0, 0, 0, 0.02);
     //background: rgb(255, 255, 255);
+    position: absolute;
+    top: 144px;
+    left: 69px;
+    z-index: 1;
 `
 
 const StyledImage = styled.img`
     width: 321px;
+    align-self: center;
     height: 161px;
     object-fit: cover;
     border-radius: 26px;
+    
+`
+
+const StyledDate = styled.span`
+`
+
+const StyledName = styled.span`
 `
 
 const StyledText = styled.span`

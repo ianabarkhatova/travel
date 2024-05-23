@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {CSSProperties} from 'react';
 import styled from "styled-components";
 import {Image} from "../../../../components/image/Image";
 
 type ServicePropsType = {
-    imageSource: string
-    imageWidth?: string
-    imageHeight?: string
-    imageAlt: string
+    imgSource: string,
+    imgAlt: string,
+    imgWidth?: string
+    imgHeight?: string
+    imgStyle?: CSSProperties & object
     title: string
     text: string
 }
@@ -15,10 +16,12 @@ export const Service = (props: ServicePropsType) => {
     return (
         <StyledService>
             <Image
-                imageSource={props.imageSource}
-                imageWidth={props.imageWidth}
-                imageHeight={props.imageHeight}
-                imageAlt={props.imageAlt}/>
+                src={props.imgSource}
+                alt={props.imgAlt}
+                width={props.imgWidth}
+                height={props.imgHeight}
+                style={props.imgStyle}
+            />
             <ServiceTitle>{props.title}</ServiceTitle>
             <ServiceText>{props.text}</ServiceText>
         </StyledService>

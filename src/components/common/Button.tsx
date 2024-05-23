@@ -1,7 +1,17 @@
 import styled from "styled-components";
+import {CSSProperties} from "react";
 
-export const Button = styled.button`
-    max-height: 58px;
-    background-color: rgba(231,255,131,0.79);
+type ButtonPropsType = {
+    style?: CSSProperties & object
+}
+
+
+export const Button = styled.button<ButtonPropsType>`
+    background-color: rgb(223, 105, 81);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 20px 35px 0 rgba(223, 105, 81, 0.15);
+    width: 176px;
+    height: 56px;
 `
 

@@ -11,7 +11,7 @@ export const Header = () => {
                     <FlexWrapper justify={"space-between"}>
                         <Logo/>
                         <NavBar/>
-                        <Button type={"submit"}>Get in Touch</Button>
+                        <Button type={"submit"} style={{ width: "152px", height: "58px"}}>Get in Touch</Button>
                     </FlexWrapper>
             </StyledHeader>
     );

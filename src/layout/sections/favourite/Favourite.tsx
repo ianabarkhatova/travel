@@ -4,11 +4,9 @@ import {SectionDescription} from "../../../components/common/SectionDescription"
 import {SectionTitle} from "../../../components/common/SectionTitle";
 import {FavouriteCard} from "./favouriteCard/FavouriteCard";
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
-import image1 from "../../../assets/images/favourite/favourite-2.webp";
-import image2 from "../../../assets/images/favourite/favourite-1.webp"
-import {Image} from "../../../components/image/Image";
-import {TripTitle} from "../../../components/common/TripTitle";
+import image from "../../../assets/images/favourite/favourite-2.webp";
 import {TripCard} from "./tripCard/TripCard";
+import {OngoingTripCard} from "./ongoingTripCard/OngoingTripCard";
 
 const FavouriteCardsData = [
     {
@@ -53,9 +51,10 @@ export const Favourite = () => {
 
                 <StyledTrip>
                     <TripCard/>
-                    <StyledOngoingTrip></StyledOngoingTrip>
-                    <Image imageSource={image1}/>
+                    <OngoingTripCard></OngoingTripCard>
+                    <StyledImage src={image}/>
                 </StyledTrip>
+
 
             </FlexWrapper>
 
@@ -70,7 +69,7 @@ const StyledFavourite = styled.section`
 
 const StyledFast = styled.div`
     width: 458px;
-    height: 488px;
+    min-height: 488px;
     background-color: rgba(54,255,166,0.79);
 `
 
@@ -78,13 +77,22 @@ const StyledTrip = styled.div`
     width: 879px;
     height: 600px;
     background-color: rgba(141,212,255,0.79);
+    position: relative;
 `
 
-const StyledOngoingTrip = styled.div`
-    width: 263px;
-    height: 129px;
-    background-color: rgba(234,255,244,0.79);
+const StyledImage = styled.img`
+    width: 692px;
+    height: 385px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 187px;
+    z-index: 0;
 `
+
+
+
+
 
 
 

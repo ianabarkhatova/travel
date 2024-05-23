@@ -1,16 +1,17 @@
-import React from 'react';
+import {CSSProperties} from 'react';
+import styled from "styled-components";
 
 type ImagePropsType = {
-    imageSource: string
-    imageWidth?: string
-    imageHeight?: string
-    imageAlt?: string
+    imgSource?: string,
+    imgAlt?: string,
+    imgWidth?: string
+    imgHeight?: string
+    imgStyle?: CSSProperties & object
 }
 
-export const Image = (props: ImagePropsType) => {
-    return (
-        <img src={props.imageSource} width={props.imageWidth || "72"} height={props.imageHeight || "65"} alt={props.imageAlt}
-        />
-    );
-};
+export const Image = styled.img<ImagePropsType>`
+    width: ${props => props.imgWidth || "72"};
+    height: ${props => props.imgHeight || "65"};
+`
+
 

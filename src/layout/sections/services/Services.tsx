@@ -11,26 +11,26 @@ import service4 from "../../../assets/images/services/service-4.png";
 
 const servicesData = [
     {
-        imageSource: service1,
-        imageAlt: "logo of a person with a flag",
+        imgSource: service1,
+        imgAlt: "logo of a person with a flag",
         title: "Guided Tours",
         text: "sunt qui repellat saepe quo velit aperiam id aliquam placeat."
     },
     {
-        imageSource: service2,
-        imageAlt: "logo of a plane",
+        imgSource: service2,
+        imgAlt: "logo of a plane",
         title: "Best Flights Options",
         text: "sunt qui repellat saepe quo velit aperiam id aliquam placeat."
     },
     {
-        imageSource: service3,
-        imageAlt: "logo of hands in prayer",
+        imgSource: service3,
+        imgAlt: "logo of hands in prayer",
         title: "Religious Tours",
         text: "sunt qui repellat saepe quo velit aperiam id aliquam placeat."
     },
     {
-        imageSource: service4,
-        imageAlt: "logo of a medical team",
+        imgSource: service4,
+        imgAlt: "logo of a medical team",
         title: "Medical insurance",
         text: "sunt qui repellat saepe quo velit aperiam id aliquam placeat."
     }
@@ -45,12 +45,13 @@ export const Services = () => {
             <FlexWrapper>
 
                 {servicesData.map((s, index) => {
-                    return <Service imageSource={s.imageSource} key={index}
-                                    imageAlt={s.imageAlt}
+                    return <Service imgSource={s.imgSource} key={index}
+                                    imgAlt={s.imgAlt}
+                                    imgWidth="72px"
+                                    imgHeight="65px"
                                     title={s.title}
                                     text={s.text}
                     />
-
                 })}
             </FlexWrapper>
         </StyledServices>
