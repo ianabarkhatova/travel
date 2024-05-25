@@ -4,9 +4,11 @@ import {SectionDescription} from "../../../components/common/SectionDescription"
 import {SectionTitle} from "../../../components/common/SectionTitle";
 import {FavouriteCard} from "./favouriteCard/FavouriteCard";
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
-import image from "../../../assets/images/favourite/favourite-2.webp";
+import image1 from "../../../assets/images/favourite/favourite-2.webp";
 import {TripCard} from "./tripCard/TripCard";
 import {OngoingTripCard} from "./ongoingTripCard/OngoingTripCard";
+import {Image} from "../../../components/image/Image";
+import image2 from "../../../assets/images/favourite/favourite-4.webp"
 
 const FavouriteCardsData = [
     {
@@ -30,7 +32,7 @@ const FavouriteCardsData = [
 export const Favourite = () => {
     return (
         <StyledFavourite>
-            <FlexWrapper justify={"space-between"}>
+            <FlexWrapper justify={"space-around"}>
                 <StyledFast>
                     <FlexWrapper direction={"column"}>
                         <SectionDescription align={"left"}>Fast & Easy</SectionDescription>
@@ -52,11 +54,14 @@ export const Favourite = () => {
                 <StyledTrip>
                     <TripCard/>
                     <OngoingTripCard></OngoingTripCard>
-                    <StyledImage src={image}/>
+                    <StyledImageOne src={image1}/>
                 </StyledTrip>
-
-
             </FlexWrapper>
+
+            <StyledHoliday>
+                <StyledImageTwo src={image2}/>
+                <SectionTitle>Let’s make your next holiday amazing</SectionTitle>
+            </StyledHoliday>
 
         </StyledFavourite>
     );
@@ -65,6 +70,7 @@ export const Favourite = () => {
 const StyledFavourite = styled.section`
     background-color: rgba(97,250,255,0.79);
     min-height: 600px;
+    width: 100%;
 `
 
 const StyledFast = styled.div`
@@ -80,7 +86,7 @@ const StyledTrip = styled.div`
     position: relative;
 `
 
-const StyledImage = styled.img`
+const StyledImageOne = styled.img`
     width: 692px;
     height: 385px;
     object-fit: cover;
@@ -89,6 +95,26 @@ const StyledImage = styled.img`
     left: 187px;
     z-index: 0;
 `
+
+const StyledImageTwo = styled.img`
+    width: 100%;
+    max-height: 570px;
+`
+
+const StyledHoliday = styled.div`
+    display: flex;
+    position: relative;
+
+    ${SectionTitle} {
+        position: absolute;
+        top: 56%;
+        left: 20%;
+    }
+    
+
+`
+
+
 
 
 

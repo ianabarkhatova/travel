@@ -7,13 +7,14 @@ import styled from "styled-components";
 import {Package} from "../../../components/package/Package";
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
 import {Image} from "../../../components/image/Image";
+import {Illustration} from "../../../components/illustration/Illustration";
 
 const honeymoonData = [
     {
         description: "Honeymoon Specials",
         title: "Our Romantic Tropical Destinations",
         text: "Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos. Non quis eius quo      eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!",
-        },
+    },
 ]
 
 export const Honeymoon = () => {
@@ -27,9 +28,12 @@ export const Honeymoon = () => {
                            style={{width:"230px", height:"230px", top: "0", left: "67px", zIndex: "1"}}/>
                     <Image src={romantic3} alt={"ellipse"}
                            style={{width:"74px", height:"74px", top: "16px", left: "310px", zIndex: "1"}}/>
-                    <Image src={romantic4} alt={"couple hugging in front of the sea"}
-                           style={{width:"476px", height:"690px", bottom: "0", left: "150px", objectFit: "cover",
-                               borderRadius: "376.11px 376.11px 0 0"}}/>
+                    <Illustration imgSource={romantic4}
+                                  imgAlt={"couple hugging in front of the sea"}
+                                  text={"Honeymoon Packages"}
+                                  styleImage={{right: 0}}
+                                  styleText={{left: 0}}
+                    />
                 </StyledIllustration>
 
                     {honeymoonData.map((h,index) => {
@@ -62,29 +66,7 @@ const StyledIllustration = styled.div`
     }
 `
 
-// const StyledImage = styled.img`
-//     :first-child {
-//         top: 248px;
-//         z-index: 1;
-//     }
-//
-//     :nth-child(2) {
-//         top: 0;
-//         left: 67px;
-//         z-index: 1;
-//     }
-//
-//     :nth-child(3) {
-//         top: 16px;
-//         left: 310px;
-//         z-index: 1;
-//     }
-//
-//     :nth-child(4) {
-//         left: 150px;
-//         bottom: 0;
-//     }
-// `
+
 
 
 
