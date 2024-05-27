@@ -48,7 +48,5 @@ const StyledNavBar = styled.nav`
         display: flex;
         gap: 30px;
     }
-   
-
 `
 
