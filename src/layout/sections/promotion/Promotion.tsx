@@ -69,6 +69,7 @@ export const Promotion = () => {
                     text={"Breathtaking Views"}
                     styleImage={{left: 0}}
                     styleText={{right: 0}}
+                    styleIllustration={{right: 292}}
                 />
         </StyledPromotion>
     );
@@ -77,7 +78,7 @@ export const Promotion = () => {
 const StyledPromotion = styled.section`
     min-height: 751px;
     background-color: rgba(255,206,92,0.79);
-    max-width: 1482px;
+    min-width: 1482px;
     
     display: flex;
     flex-direction: row;
@@ -87,8 +88,12 @@ const PromotionWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 80px;
-    z-index: 0;
+    max-width: 380px;
+    
+    position: relative;
+    z-index: 1;
 `
+
 
 const PromotionCardWrapper = styled.div`
     background-color: lightpink;
