@@ -6,6 +6,7 @@ import {Services} from "./layout/sections/services/Services";
 import {Honeymoon} from "./layout/sections/honeymoon/Honeymoon";
 import {Favourite} from "./layout/sections/favourite/Favourite";
 import {Promotion} from "./layout/sections/promotion/Promotion";
+import {Reviews} from "./layout/sections/reviews/Reviews";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Honeymoon/>
             <Favourite/>
             <Promotion/>
+            <Reviews/>
         </div>
     );
 }
