@@ -8,35 +8,15 @@ import face4 from "../../../assets/images/search/face-4.png"
 import face5 from "../../../assets/images/search/face-5.png"
 import face6 from "../../../assets/images/search/face-6.png"
 import ellipse from "../../../assets/images/search/ellipse.png"
-import {Dropdown} from "../../../components/dropdown/Dropdown";
+import {DropdownSelect} from "../../../components/dropdownSelect/DropdownSelect";
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
 
-const dropdownData = [
-    {
-        dropdownDataId: "travelType",
-        optionValue: "Travel Type",
-        optionValue1: "Option 1",
-        optionValue2: "Option 2",
-        optionValue3: "Option 3",
-    },
 
-    {
-        dropdownDataId: "duration",
-        optionValue: "Duration",
-        optionValue1: "Option 1",
-        optionValue2: "Option 2",
-        optionValue3: "Option 3",
-    },
+const dropdownTravelItems = ["Travel Type", "Family", "Single", "Friends"]
 
-    // {
-    //     dropdownDataId: "services",
-    //     optionValue: "Services",
-    //     optionValue1: "Honeymoon Packages",
-    //     optionValue2: "Tours Packages",
-    //     optionValue3: "Musical Events",
-    //     optionValue4: "Build Package",
-    // }
-]
+
+const dropdownDurationItems = ["Duration", "3 days", "5 days", "7 days"]
+
 
 export const Main = () => {
     return (
@@ -49,15 +29,9 @@ export const Main = () => {
                     <StyledForm>
                         <StyledField placeholder={"Where to?"}></StyledField>
 
-                        {dropdownData.map((d, index) => {
-                            return <Dropdown dropdownDataId={d.dropdownDataId} key={index}
-                                             optionValue={d.optionValue}
-                                             optionValue1={d.optionValue1}
-                                             optionValue2={d.optionValue2}
-                                             optionValue3={d.optionValue3}
-                            />
-                            }
-                        )}
+                        <DropdownSelect dropdownItems={dropdownTravelItems}/>
+                        <DropdownSelect dropdownItems={dropdownDurationItems}/>
+
                         <Button type={"submit"}>Submit</Button>
                     </StyledForm>
 
