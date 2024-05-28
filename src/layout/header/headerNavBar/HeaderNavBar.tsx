@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
-import {DropdownSelect} from "../../../components/dropdownSelect/DropdownSelect";
 import {theme} from "../../../styles/Theme";
+import {DropdownHover} from "../DropdownHover";
 
-const dropdownServicesItems = ["Services", "Honeymoon Packages", "Tours Packages", "Musical Events", "Build Package"]
+const dropdownHoverItems = ["Honeymoon Packages", "Tours Packages", "Musical Events", "Build Package"]
 
 export const HeaderNavBar = (props: {navBarItems: Array<string>}) => {
     return (
@@ -13,17 +13,20 @@ export const HeaderNavBar = (props: {navBarItems: Array<string>}) => {
                     return (
                         <ListItem key={index}>
                             <Link href="#">{item}</Link>
-                            {/*{index === 1 && <Dropdown dropdownItems={dropdownServicesItems}/>*/}
+                            {/*{index === 1 && <DropdownHover dropdownHoverItems={dropdownHoverItems}/>*/}
                             {/*}*/}
                         </ListItem>
-                                )
-                        })}
+                    )
+                })}
+                <DropdownHover dropdownHoverItems={dropdownHoverItems}/>
             </ul>
         </StyleHeaderNavBar>
     );
 };
 
 const StyleHeaderNavBar = styled.nav`
+    margin: 0 208px 0 308px;
+    
     ul {
         display: flex;
         padding: 18px 0;
@@ -41,7 +44,5 @@ const Link = styled.a`
         font-weight: 500;
         font-style: normal;
         font-size: 17px;
-        line-height: 22px;
-        text-align: left;
 `
 

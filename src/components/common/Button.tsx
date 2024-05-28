@@ -1,17 +1,47 @@
-import styled from "styled-components";
-import {CSSProperties} from "react";
+import styled, {css} from "styled-components";
+import {theme} from "../../styles/Theme";
 
 type ButtonPropsType = {
-    style?: CSSProperties & object
+    big?: boolean
+    small?: boolean
+    smaller?: boolean
 }
 
 
 export const Button = styled.button<ButtonPropsType>`
-    background-color: rgb(223, 105, 81);
-    color: rgb(255, 255, 255);
+    background-color: ${theme.colors.accent};
+    color: ${theme.colors.lightFont};
     border-radius: 10px;
     box-shadow: 0 20px 35px 0 rgba(223, 105, 81, 0.15);
-    width: 176px;
-    height: 56px;
-`
+
+    ${props => props.small && css<ButtonPropsType>`
+        font-family: "Figtree", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 17px;
+        width: 152px;
+        height: 58px;
+    `}
+
+    ${props => props.big && css<ButtonPropsType>`
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 17px;
+        width: 176px;
+        height: 56px;
+    `}
+
+    ${props => props.smaller && css<ButtonPropsType>`
+        font-family: "Manrope", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 16px;
+        width: 149px;
+        height: 52px;
+    `}
+    
+    `
+
 

@@ -6,7 +6,7 @@ import {Button} from "../../components/common/Button";
 import {FlexWrapper} from "../../components/common/FlexWrapper";
 import {Container} from "../../components/common/Container";
 
-const navBarItems = ["Home", "About", "Services", "Upcoming Packages"]
+const navBarItems = ["Home", "About", "Upcoming Packages"]
 
 export const Header = () => {
     return (
@@ -15,7 +15,7 @@ export const Header = () => {
                 <FlexWrapper justify={"space-between"}>
                     <Logo/>
                     <HeaderNavBar navBarItems={navBarItems}/>
-                    <Button type={"submit"} style={{width: "152px", height: "58px"}}>Get in Touch</Button>
+                    <Button type={"submit"} small>Get in Touch</Button>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
