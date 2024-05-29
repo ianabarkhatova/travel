@@ -5,14 +5,33 @@ import {theme} from "../../styles/Theme";
 
 export const DropdownSelect = (props: {dropdownItems: Array<string>}) => {
     return (
-        <StyledDropdownSelect>
-            {props.dropdownItems.map((item, index) => {
-                return <Option key={index} value="">{item}
-                </Option>
-            })}
-        </StyledDropdownSelect>
+        <SelectContainer>
+            <StyledDropdownSelect>
+                {props.dropdownItems.map((item, index) => {
+                    return <Option key={index} value="">{item}
+                    </Option>
+                })}
+            </StyledDropdownSelect>
+        </SelectContainer>
+
+
     );
 };
+
+const SelectContainer = styled.div`
+    position: relative;
+
+    &::after {
+        content: '▼'; /* Unicode character for a down arrow */
+        font-size: 14px;
+        color: ${theme.colors.lightFont};
+        position: absolute;
+        right: -14px;
+        top: 36%;
+        transform: translateY(-50%);
+        pointer-events: none; /* Prevents the arrow from interfering with clicks */
+    }
+`
 
 
 const StyledDropdownSelect = styled.select`
@@ -21,21 +40,23 @@ const StyledDropdownSelect = styled.select`
     border-radius: 0;
     
     cursor: pointer;
-    display: inline-block;
+    //text-align: center;
     
     background-color: transparent;
     color: ${theme.colors.lightFont};
-    font-family: "Figtree", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 17px;
-    line-height: 22px;
-    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
     margin-left: 50px;
+    
+    &:focus-visible {
+        outline: 1px solid rgba(243, 243, 243, 0.6);
+        border-radius: 5px;
+    }
+}
 `
 
 const Option = styled.option`
-    
 `
 
 
