@@ -12,7 +12,7 @@ export const Header = () => {
     return (
         <StyledHeader>
             <Container>
-                <FlexWrapper justify={"space-between"}>
+                <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo/>
                     <HeaderNavBar navBarItems={navBarItems}/>
                     <Button type={"submit"} small>Get in Touch</Button>
@@ -24,7 +24,7 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
     position: fixed;
-    padding: 18px 0;
+    padding: 50px 0;
     top: 0;
     left: 0;
     right: 0;
