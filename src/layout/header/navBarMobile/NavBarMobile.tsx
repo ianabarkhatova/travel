@@ -8,11 +8,11 @@ const dropdownHoverItems = ["Honeymoon Packages", "Tours Packages", "Musical Eve
 export const NavBarMobile = (props: { navBarItems: Array<string> }) => {
     return (
         <StyledNavBarMobile>
-            <BurgerButton isOpen={true}>
+            <BurgerButton isOpen={false}>
                 <span></span>
             </BurgerButton>
 
-            <StyledUlPopUp isOpen={true}>
+            <StyledUlPopUp isOpen={false}>
                 <StyledUl>
                     {props.navBarItems.map((item, index) => {
                         return (

@@ -20,14 +20,18 @@ const SelectContainer = styled.div`
     position: relative;
 
     &::after {
-        content: '▼'; /* Unicode character for a down arrow */
+        content: '▼'; 
         font-size: 14px;
         color: ${theme.colors.lightFont};
         position: absolute;
-        right: -14px;
-        top: 36%;
+        right: -26px;
+        top: 46%;
         transform: translateY(-50%);
         pointer-events: none; /* Prevents the arrow from interfering with clicks */
+
+        @media screen and (max-width: 880px) {
+            right: 0;
+        }
     }
 `
 
@@ -38,7 +42,6 @@ const StyledDropdownSelect = styled.select`
     border-radius: 0;
     
     cursor: pointer;
-    //text-align: center;
     
     background-color: transparent;
     color: ${theme.colors.lightFont};
@@ -46,6 +49,10 @@ const StyledDropdownSelect = styled.select`
     font-weight: 400;
     font-size: 20px;
     margin-left: 50px;
+
+    @media screen and (max-width: 880px) {
+        margin-left: 0;
+    }
     
     &:focus-visible {
         outline: 1px solid rgba(243, 243, 243, 0.6);
@@ -55,6 +62,7 @@ const StyledDropdownSelect = styled.select`
 `
 
 const Option = styled.option`
+   
 `
 
 

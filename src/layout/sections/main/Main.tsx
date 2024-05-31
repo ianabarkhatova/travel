@@ -109,6 +109,14 @@ const StyledMainTitle = styled.h2`
     text-align: left;
     color: ${theme.colors.lightFont};
     max-width: 630px;
+
+    @media ${theme.media.small} {
+        font-size: 46px;
+    }
+
+    @media ${theme.media.xSmall} {
+        font-size: 40px;
+    }
 `
 
 const StyledForm = styled.form`
@@ -122,18 +130,33 @@ const StyledForm = styled.form`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: calc(50px + 2vw);
     margin: 35px 0 28px 0;
     padding: 39px 28px 35px;
+
+    @media screen and (max-width: 880px) {
+        flex-direction: column;
+        gap: 10px;
+        
+        ${Button} {
+            width: 100%;
+        }
+    }
 `
 
 const StyledFields = styled.div`
     display: flex;
     width: 100%;
+
+    @media screen and (max-width: 880px) {
+        flex-direction: column;
+        gap: 10px;
+    }
 `
 
 const StyledField = styled.input`
-    border: 1px solid rgba(243, 243, 243, 0.6);
+    //border: 1px solid rgba(243, 243, 243, 0.6);
+    border: none;
     border-radius: 5px;
     background-color: transparent;
     
@@ -143,7 +166,6 @@ const StyledField = styled.input`
     font-size: 20px;
     
     flex: 2;
-    
     
     &::placeholder {
         color: ${theme.colors.lightFont};
@@ -208,6 +230,10 @@ const StyledReviews = styled.div`
     align-items: center;
     gap: 14px;
     max-width: 534px;
+
+    @media screen and (max-width: 880px) {
+        display: none;
+    }
 `
 
 
