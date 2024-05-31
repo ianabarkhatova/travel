@@ -13,8 +13,6 @@ export const DropdownSelect = (props: {dropdownItems: Array<string>}) => {
                 })}
             </StyledDropdownSelect>
         </SelectContainer>
-
-
     );
 };
 

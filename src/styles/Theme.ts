@@ -9,5 +9,12 @@ export const theme = {
         darkSmallFont: "#5E6282",
         darkSmallerFont: "#000000",
         darkFooterFont: "#181433"
+    },
+
+    media: {
+        xSmall: "screen and (max-width: 576px)",
+        small: "screen and (max-width: 768px)",
+        medium: "screen and (max-width: 992px)",
+        large: "screen and (max-width: 1200px)",
     }
 }

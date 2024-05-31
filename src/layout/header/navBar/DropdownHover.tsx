@@ -37,21 +37,21 @@ const StyledDropdownHover = styled.li`
         background: rgba(217, 217, 217, 0.34);
         border-radius: 16px;
         backdrop-filter: blur(100px);
-
-        :hover ul {
-            display: flex;
-        }
     }
 
-    :hover ul {
+    &:hover ul {
         display: flex;
+
+        @media ${theme.media.small} {
+            display: none;
+        }
     }
 `
 
 const DropdownLink = styled.a`
     color: ${theme.colors.lightFont};
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     text-align: left;
 
     &:hover {
@@ -68,7 +68,7 @@ const DropdownLink = styled.a`
         border-radius: 34px;
 
         position: absolute;
-        bottom: 0;
+        bottom: -4px;
         left: 8px;
         right: 8px;
 `
@@ -82,9 +82,13 @@ const Link = styled.a`
     font-family: "Figtree", sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 17px;
+    font-size: 16px;
 
     position: relative;
+
+    // @media ${theme.media.small} {
+    //     font-size: 26px;
+    // }
 
     &:hover {
         &::before {

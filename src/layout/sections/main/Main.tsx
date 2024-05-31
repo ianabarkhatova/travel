@@ -7,7 +7,6 @@ import face3 from "../../../assets/images/search/face-3.png";
 import face4 from "../../../assets/images/search/face-4.png";
 import face5 from "../../../assets/images/search/face-5.png";
 import face6 from "../../../assets/images/search/face-6.png";
-import ellipse from "../../../assets/images/search/ellipse.png";
 import background from "../../../assets/images/header/background-1.webp"
 import {DropdownSelect} from "../../../components/dropdownSelect/DropdownSelect";
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
@@ -17,8 +16,34 @@ import {theme} from "../../../styles/Theme";
 
 const dropdownTravelItems = ["Travel Type", "Family", "Single", "Friends"]
 
-
 const dropdownDurationItems = ["Duration", "3 days", "5 days", "7 days"]
+
+const dropdownImagesData = [
+    {
+        image : face1,
+        alt: "young man's portrait"
+    },
+    {
+        image: face2,
+        alt: "young woman's portrait"
+    },
+    {
+        image: face3,
+        alt: "man's portrait"
+    },
+    {
+        image: face4,
+        alt: "man's side photo"
+    },
+    {
+        image: face5,
+        alt: "young man's photo"
+    },
+    {
+        image: face6,
+        alt: "young man's photo"
+    }
+]
 
 
 export const Main = () => {
@@ -34,7 +59,6 @@ export const Main = () => {
                         <StyledForm>
                             <StyledFields>
                                 <StyledField placeholder={"Where to?"}></StyledField>
-
                                 <DropdownSelect dropdownItems={dropdownTravelItems}/>
                                 <DropdownSelect dropdownItems={dropdownDurationItems}/>
                             </StyledFields>
@@ -44,13 +68,14 @@ export const Main = () => {
 
                         <StyledReviews>
                             <StyledImages>
-                                <StyledImageIcon src={face1} alt={""}/>
-                                <StyledImageIcon src={face2} alt={""}/>
-                                <StyledImageIcon src={face3} alt={""}/>
-                                <StyledImageIcon src={face4} alt={""}/>
-                                <StyledImageIcon src={face5} alt={""}/>
-                                <StyledImageIcon src={face6} alt={""}/>
-                                <StyledImageIcon src={ellipse} alt={""}/>
+                                {dropdownImagesData.map((d,index) => {
+                                    return(
+                                        <StyledImageIcon key={index}
+                                                         src={d.image}
+                                                         alt={d.alt}/>
+                                    )
+                                })}
+
                             </StyledImages>
 
                             <StyledMainText>
@@ -92,7 +117,7 @@ const StyledForm = styled.form`
     border-radius: 5px;
 
     backdrop-filter: blur(14px);
-    background: rgba(243, 243, 243, 0.6);
+    background-color: rgba(243, 243, 243, 0.6);
     
     display: flex;
     justify-content: center;
@@ -132,6 +157,7 @@ const StyledField = styled.input`
 
 const StyledImages = styled.div`
     position: relative;
+    display: flex;
 `
 
 const StyledImageIcon = styled.img`
@@ -168,12 +194,20 @@ const StyledImageIcon = styled.img`
 `
 
 const StyledMainText = styled.span`
+    font-weight: 500;
+    font-size: 12px;
+    text-align: left;
+    color: ${theme.colors.lightFont};
+    padding: 10px;
+
 `
 
 const StyledReviews = styled.div`
     display: flex;
     justify-content: space-between;
-    max-width: 620px;
+    align-items: center;
+    gap: 14px;
+    max-width: 534px;
 `
 
 

@@ -5,10 +5,10 @@ import {DropdownHover} from "./DropdownHover";
 
 const dropdownHoverItems = ["Honeymoon Packages", "Tours Packages", "Musical Events", "Build Package"]
 
-export const HeaderNavBar = (props: { navBarItems: Array<string> }) => {
+export const NavBar = (props: { navBarItems: Array<string> }) => {
     return (
-        <StyleHeaderNavBar>
-            <ul>
+        <StyleNavBar>
+            <StyledUl>
                 {props.navBarItems.map((item, index) => {
                     return (
                         <ListItem key={index}>
@@ -19,32 +19,49 @@ export const HeaderNavBar = (props: { navBarItems: Array<string> }) => {
                     )
                 })}
                 <DropdownHover dropdownHoverItems={dropdownHoverItems}/>
-            </ul>
-        </StyleHeaderNavBar>
+            </StyledUl>
+        </StyleNavBar>
     );
 };
 
-const StyleHeaderNavBar = styled.nav`
-    margin: 0 208px 0 308px;
+const StyledUl = styled.ul`
+    display: flex;
+    gap: calc(2vw + 30px);
 
-    ul {
-        display: flex;
-        //align-items: center;
-        //justify-content: center;
-        gap: 50px;
+    @media ${theme.media.medium} {
+        gap: calc(1vw + 10px);
+    }
+
+    @media ${theme.media.small} {
+        display: none;
+    }
+`
+
+const StyleNavBar = styled.nav`
+    margin: 0 calc(5% + 50px);
+
+    @media ${theme.media.large} {
+        margin: 0 calc(4% + 40px); 
+    }
+
+    @media ${theme.media.medium} {
+        margin: 0 calc(3% + 30px); 
+    }
+
+    @media ${theme.media.small} {
+        margin: 0 calc(2% + 20px); 
     }
 `
 
 const ListItem = styled.li`
     position: relative;
-
 `
 
 const Link = styled.a`
     color: ${theme.colors.lightFont};
     font-family: "Figtree", sans-serif;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 16px;
 
     &:hover {
         &::before {
@@ -60,14 +77,9 @@ const Link = styled.a`
         border-radius: 34px;
        
         position: absolute;
-        bottom: 0;
+        bottom: -2px;
         left: 8px;
         right: 8px;
-        
     }
-    
-    
-
-
 `
 
