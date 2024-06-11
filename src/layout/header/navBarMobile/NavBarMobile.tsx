@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
 import {DropdownHover} from "../navBar/DropdownHover";
@@ -6,13 +6,16 @@ import {DropdownHover} from "../navBar/DropdownHover";
 const dropdownHoverItems = ["Honeymoon Packages", "Tours Packages", "Musical Events", "Build Package"]
 
 export const NavBarMobile = (props: { navBarItems: Array<string> }) => {
+    const [menuIsOpen, setmenuIsOpen] = useState(false)
+    const onBurgerBtnClick = () => {  setmenuIsOpen( !menuIsOpen ) }
+
     return (
         <StyledNavBarMobile>
-            <BurgerButton isOpen={false}>
+            <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
                 <span></span>
             </BurgerButton>
 
-            <StyledUlPopUp isOpen={false}>
+            <StyledUlPopUp isOpen={menuIsOpen} onClick={ () =>{setmenuIsOpen(false)}}>
                 <StyledUl>
                     {props.navBarItems.map((item, index) => {
                         return (
