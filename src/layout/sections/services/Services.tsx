@@ -8,6 +8,7 @@ import service1 from "../../../assets/images/services/service-1.png";
 import service2 from "../../../assets/images/services/service-2.png";
 import service3 from "../../../assets/images/services/service-3.png";
 import service4 from "../../../assets/images/services/service-4.png";
+import {Container} from "../../../components/common/Container";
 
 const servicesData = [
     {
@@ -40,26 +41,30 @@ const servicesData = [
 export const Services = () => {
     return (
         <StyledServices>
-            <SectionDescription>CATEGORY</SectionDescription>
-            <SectionTitle>We Offer Best Services</SectionTitle>
-            <FlexWrapper>
-
-                {servicesData.map((s, index) => {
-                    return <Service imgSource={s.imgSource} key={index}
-                                    imgAlt={s.imgAlt}
-                                    imgWidth="72px"
-                                    imgHeight="65px"
-                                    title={s.title}
-                                    text={s.text}
-                    />
-                })}
-            </FlexWrapper>
+            <Container>
+                <SectionDescription>CATEGORY</SectionDescription>
+                <SectionTitle>We Offer Best Services</SectionTitle>
+                <FlexWrapper wrap={"wrap"} justify={"space-between"}>
+                    {servicesData.map((s, index) => {
+                        return <Service imgSource={s.imgSource} key={index}
+                                        imgAlt={s.imgAlt}
+                                        imgWidth="72px"
+                                        imgHeight="64px"
+                                        title={s.title}
+                                        text={s.text}
+                        />
+                    })}
+                </FlexWrapper>
+            </Container>
         </StyledServices>
     );
 };
 
 const StyledServices = styled.section`
-    background-color: coral;
-    min-height: 500px;
+    padding: 100px 0 170px;
+    
+    ${SectionTitle} {
+        margin: 20px 0 66px;
+    }
 `
 

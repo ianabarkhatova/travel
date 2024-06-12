@@ -27,9 +27,12 @@ export const Button = styled.button<ButtonPropsType>`
         font-family: "Poppins", sans-serif;
         font-weight: 600;
         font-style: normal;
-        font-size: 17px;
+        font-size: 16px;
         width: 176px;
         height: 56px;
+        text-align: left;
+        padding: 0 0 20px 5px;
+        margin-top: 30px;
     `}
 
     ${props => props.smaller && css<ButtonPropsType>`

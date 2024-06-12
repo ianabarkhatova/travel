@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {SectionDescription} from "../common/SectionDescription";
 import {SectionTitle} from "../common/SectionTitle";
 import {FlexWrapper} from "../common/FlexWrapper";
+import {theme} from "../../styles/Theme";
 
 type PackagePropsType = {
     description: string
@@ -18,7 +19,7 @@ export const Package = (props: PackagePropsType) => {
                 <SectionDescription align={"left"}>{props.description}</SectionDescription>
                 <SectionTitle align={"left"}>{props.title}</SectionTitle>
                 <PackageText>{props.text}</PackageText>
-                <Button type={"submit"}>View Packages</Button>
+                <Button type={"submit"} big>View Packages</Button>
             </StyledPackage>
         </FlexWrapper>
     );
@@ -27,10 +28,17 @@ export const Package = (props: PackagePropsType) => {
 const StyledPackage = styled.div`
     max-width: 583px;
     max-height: 380px;
-    background-color: rgba(234,255,158,0.79);
+    
+    ${SectionTitle} {
+        margin: 10px 0 20px;
+    }
 `
 
 const PackageText = styled.p`
+    color: ${theme.colors.darkSmallerFont};
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
 `
 
 
