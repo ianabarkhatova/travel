@@ -1,7 +1,7 @@
 import React from 'react';
 import {Icon} from "../../../../components/icon/Icon";
 import styled from "styled-components";
-import {FlexWrapper} from "../../../../components/common/FlexWrapper";
+import {theme} from "../../../../styles/Theme";
 
 type FavouriteCardPropsType = {
     iconId: string
@@ -17,34 +17,54 @@ export const FavouriteCard = (props: FavouriteCardPropsType) => {
         <StyledFavouriteCard>
             <StyledFavouriteCardWrapper>
                 <Icon iconId={props.iconId}
-                      width={"47"}
-                      height={"48"}
-                      viewBox={"0 0 47 48"}/>
-                <FlexWrapper direction={"column"}>
+                      width={"55"}
+                      height={"55"}
+                      viewBox={"0 0 55 55"}/>
+                <ContentWrapper>
                     <FastTitle>{props.title}</FastTitle>
                     <FastText>{props.text}</FastText>
-                </FlexWrapper>
+                </ContentWrapper>
             </StyledFavouriteCardWrapper>
         </StyledFavouriteCard>
     );
 };
 
 const StyledFavouriteCard = styled.div`
-    background-color: rgba(255,202,186,0.79);
-    min-width: 395px;
-    min-height: 64px;
-    margin: 10px
+    max-width: 100%;
 `
 
 const FastTitle = styled.h4`
+    font-weight: 700;
+    font-size: 16px;
+    color: ${theme.colors.darkSmallFont};
 `
 
 const FastText = styled.p`
+    font-weight: 400;
+    font-size: 16px;
+    color: ${theme.colors.darkSmallFont};
+    text-align: left;
 `
 
 const StyledFavouriteCardWrapper = styled.div`
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: flex-start;
+
+    @media ${theme.media.large} {
+        width: 100%;
+    }
+`
+
+const ContentWrapper = styled.div`
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @media ${theme.media.large} {
+        max-width: 100%;
+    }
 `
 

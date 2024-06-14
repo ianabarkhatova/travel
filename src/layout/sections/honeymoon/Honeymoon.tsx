@@ -5,10 +5,10 @@ import romantic3 from "../../../assets/images/romantic/romantic-3.webp"
 import romantic4 from "../../../assets/images/romantic/romantic-4.png"
 import styled from "styled-components";
 import {Package} from "../../../components/package/Package";
-import {FlexWrapper} from "../../../components/common/FlexWrapper";
 import {Image} from "../../../components/image/Image";
 import {Illustration} from "../../../components/illustration/Illustration";
 import {Container} from "../../../components/common/Container";
+import {theme} from "../../../styles/Theme";
 
 const honeymoonData = [
     {
@@ -42,7 +42,7 @@ export const Honeymoon = () => {
     return (
         <StyledHoneymoon>
             <Container>
-                <FlexWrapper justify={"space-between"}>
+                <ContentWrapper>
                     <StyledImages>
                         {imagesData.map((i, index) => {
                             return(
@@ -71,51 +71,80 @@ export const Honeymoon = () => {
                             text={h.text}
                         />
                     })}
-                </FlexWrapper>
+                </ContentWrapper>
             </Container>
         </StyledHoneymoon>
-
     );
 }
 
 const StyledHoneymoon = styled.section`
 `
 
+const ContentWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    @media ${theme.media.large} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+}
+`
+
 const StyledImages = styled.div`
-    width: 655px;
-    height: 745px;
+    max-width: 655px;
+    width: 100%;
+    min-height: 745px;
     position: relative;
     z-index: 0;
-    padding: 2px;
+    display: flex;
     
     > * {
         position: absolute;
+    }
+    
+    ${Image} {
+        @media ${theme.media.large} {
+            display: none;
+        }
     }
 `
 
 const IllustrationWrapper = styled.div`
     position: relative;
+    max-width: 552px;
+    width: 100%;
+    height: auto;
 
-    //&::before {
-    //    content: "";
-    //    display: inline-block;
-    //    width: 476px;
-    //    height: 710px;
-    //    background: linear-gradient(45deg, #A7327AFF 100%, #3B90FBFF 100%);
-    //    border: 2px solid transparent;
-    //    border-radius: 376px 376px 0 0;
-    //    border-bottom: transparent;
-    //
-    //    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    //    -webkit-mask-composite: xor;
-    //    mask-composite: exclude; 
-    //
-    //    position: absolute;
-    //    top: 0;
-    //    right: 82px;
-    //    bottom: 0;
-    //    z-index: -1; 
-    //}
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 476px;
+        height: 710px;
+        background: linear-gradient(45deg, #A7327AFF 100%, #3B90FBFF 100%);
+        border: 2px solid transparent;
+        border-radius: 376px 376px 0 0;
+        border-bottom: transparent;
+
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude; 
+
+        position: absolute;
+        //top: 0;
+        right: 0;
+        left: 90px;
+        bottom: 0;
+        z-index: -1;
+
+        @media ${theme.media.large} {
+            display: none;
+        }
+        
+    }
+    
 `
 
 

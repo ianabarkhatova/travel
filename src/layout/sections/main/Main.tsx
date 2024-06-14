@@ -12,6 +12,7 @@ import {DropdownSelect} from "../../../components/dropdownSelect/DropdownSelect"
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
 import {Container} from "../../../components/common/Container";
 import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 
 const dropdownTravelItems = ["Travel Type", "Family", "Single", "Friends"]
@@ -104,10 +105,14 @@ const MainContent = styled.div`
 `
 
 const StyledMainTitle = styled.h2`
-    font-size: 58px;
-    font-weight: 700;
+    ${font({
+        weight: 700,
+        Fmax: 58,
+        Fmin: 36,
+        color: theme.colors.lightFont
+    })}
+    
     text-align: left;
-    color: ${theme.colors.lightFont};
     max-width: 630px;
 
     @media ${theme.media.small} {

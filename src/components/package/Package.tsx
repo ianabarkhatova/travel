@@ -26,8 +26,7 @@ export const Package = (props: PackagePropsType) => {
 };
 
 const StyledPackage = styled.div`
-    max-width: 583px;
-    max-height: 380px;
+    max-width: 584px;
     
     ${SectionTitle} {
         margin: 10px 0 20px;

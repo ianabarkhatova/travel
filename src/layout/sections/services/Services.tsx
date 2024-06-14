@@ -61,7 +61,6 @@ export const Services = () => {
 };
 
 const StyledServices = styled.section`
-    padding: 100px 0 170px;
     
     ${SectionTitle} {
         margin: 20px 0 66px;

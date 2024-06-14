@@ -8,6 +8,7 @@ import {Favourite} from "./layout/sections/favourite/Favourite";
 import {Promotion} from "./layout/sections/promotion/Promotion";
 import {Reviews} from "./layout/sections/reviews/Reviews";
 import {Footer} from "./layout/footer/Footer";
+import {Holiday} from "./layout/sections/holiday/Holiday";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Services/>
             <Honeymoon/>
             <Favourite/>
+            <Holiday/>
             <Promotion/>
             <Reviews/>
             <Footer/>

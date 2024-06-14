@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import {theme} from "./Theme";
 
 export const GlobalStyle = createGlobalStyle`
     *,
@@ -29,5 +30,13 @@ export const GlobalStyle = createGlobalStyle`
     button {
         background-color: unset;
         border: none;
+    }
+
+    section {
+        padding: 50px 0;
+
+        @media ${theme.media.small} {
+            padding: 80px 0;
+        }
     }
 `

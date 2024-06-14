@@ -6,6 +6,7 @@ import {NavItemList} from "./footer-nav-bar/NavItemList";
 import {FooterSectionTitle} from "./footer-section-title/FooterSectionTitle";
 import {Button} from "../../components/common/Button";
 import {FlexWrapper} from "../../components/common/FlexWrapper";
+import {Container} from "../../components/common/Container";
 
 const SocialItemData = [
     {
@@ -61,66 +62,69 @@ const FooterNavBarDataTwo = [
 export const Footer = () => {
     return (
         <StyledFooter>
-            <FlexWrapper justify={"space-around"}>
-                <StyledGroupOne>
-                    <FlexWrapper direction={"column"}>
-                        <Logo/>
-                        <StyledFooterText>
-                            Travel helps companies manage payments easily.
-                        </StyledFooterText>
-                    </FlexWrapper>
-                    <SocialList>
-                        {SocialItemData.map((s, index) => {
+            <Container>
+                <FlexWrapper justify={"space-around"}>
+                    <StyledGroupOne>
+                        <FlexWrapper direction={"column"}>
+                            <Logo/>
+                            <StyledFooterText>
+                                Travel helps companies manage payments easily.
+                            </StyledFooterText>
+                        </FlexWrapper>
+                        <SocialList>
+                            {SocialItemData.map((s, index) => {
+                                return (
+                                    <SocialItem key={index}>
+                                        <SocialLink>
+                                            <Icon
+                                                iconId={s.iconId}
+                                                width={"22"}
+                                                height={"22"}
+                                                viewBox={"0 0 22 22"}/>
+                                        </SocialLink>
+                                    </SocialItem>
+                                )
+                            })}
+                        </SocialList>
+                    </StyledGroupOne>
+
+                    <StyledFooterNavBar>
+                        <FooterSectionTitle>Company</FooterSectionTitle>
+                        {FooterNavBarDataOne.map((f, index) => {
                             return (
-                                <SocialItem key={index}>
-                                    <SocialLink>
-                                        <Icon
-                                            iconId={s.iconId}
-                                            width={"22"}
-                                            height={"22"}
-                                            viewBox={"0 0 22 22"}/>
-                                    </SocialLink>
-                                </SocialItem>
+                                <NavItemList itemName={f.itemName}/>
                             )
                         })}
-                    </SocialList>
-                </StyledGroupOne>
+                    </StyledFooterNavBar>
 
-                <StyledFooterNavBar>
-                    <FooterSectionTitle>Company</FooterSectionTitle>
-                    {FooterNavBarDataOne.map((f, index) => {
-                        return (
-                            <NavItemList itemName={f.itemName}/>
-                        )
-                    })}
-                </StyledFooterNavBar>
+                    <StyledFooterNavBar>
+                        <FooterSectionTitle>Destinations</FooterSectionTitle>
+                        {FooterNavBarDataTwo.map((f, ) => {
+                            return (
+                                <NavItemList itemName={f.itemName}/>
+                            )
+                        })}
+                    </StyledFooterNavBar>
 
-                <StyledFooterNavBar>
-                    <FooterSectionTitle>Destinations</FooterSectionTitle>
-                    {FooterNavBarDataTwo.map((f, ) => {
-                        return (
-                            <NavItemList itemName={f.itemName}/>
-                        )
-                    })}
-                </StyledFooterNavBar>
+                    <StyledNewsLetter>
+                        <FooterSectionTitle>
+                            Join Our Newsletter
+                        </FooterSectionTitle>
 
-                <StyledNewsLetter>
-                    <FooterSectionTitle>
-                        Join Our Newsletter
-                    </FooterSectionTitle>
+                        <StyledForm>
+                            <StyledField placeholder={"Your email address"}></StyledField>
+                            <Button type={"submit"}>Submit</Button>
+                        </StyledForm>
 
-                    <StyledForm>
-                        <StyledField placeholder={"Your email address"}></StyledField>
-                        <Button type={"submit"}>Submit</Button>
-                    </StyledForm>
-
-                    <StyledNewsText>* Will send you weekly updates for your better
-                        tour packages.</StyledNewsText>
-                </StyledNewsLetter>
-            </FlexWrapper>
+                        <StyledNewsText>* Will send you weekly updates for your better
+                            tour packages.</StyledNewsText>
+                    </StyledNewsLetter>
+                </FlexWrapper>
 
 
-            <Copyright>Copyright @Xpro 2024. All Rights Reserved.</Copyright>
+                <Copyright>Copyright @Xpro 2024. All Rights Reserved.</Copyright>
+            </Container>
+
 
         </StyledFooter>
     );

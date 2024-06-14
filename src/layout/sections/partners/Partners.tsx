@@ -70,7 +70,6 @@ export const Partners = () => {
 
 const StyledPartners = styled.section`
     background-color: ${theme.colors.primaryBg};
-    min-height: 200px;
 `
 
 const MainContent = styled.div`

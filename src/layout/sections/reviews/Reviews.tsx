@@ -5,16 +5,18 @@ import {SectionDescription} from "../../../components/common/SectionDescription"
 import {SectionTitle} from "../../../components/common/SectionTitle";
 import {Slider} from "./slider/Slider";
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
+import {Container} from "../../../components/common/Container";
 
 export const Reviews = () => {
     return (
         <StyledReviews>
-            <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
-                <SectionDescription>Reviews</SectionDescription>
-                <SectionTitle>See What Our Clients Say About Us</SectionTitle>
-                <Slider/>
-            </FlexWrapper>
-
+            <Container>
+                <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
+                    <SectionDescription>Reviews</SectionDescription>
+                    <SectionTitle>See What Our Clients Say About Us</SectionTitle>
+                    <Slider/>
+                </FlexWrapper>
+            </Container>
         </StyledReviews>
     );
 };
