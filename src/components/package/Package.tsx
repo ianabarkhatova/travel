@@ -29,7 +29,7 @@ const StyledPackage = styled.div`
     max-width: 584px;
     
     ${SectionTitle} {
-        margin: 10px 0 20px;
+        margin: 20px 0 30px;
     }
 `
 

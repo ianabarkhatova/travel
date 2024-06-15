@@ -58,7 +58,6 @@ export const Honeymoon = () => {
                             <Illustration imgSource={romantic4}
                                           imgAlt={"couple hugging in front of the sea"}
                                           text={"Honeymoon Packages"}
-                                          styleImage={{right: 0}}
                                           styleText={{left: 0}}
                             />
                         </IllustrationWrapper>

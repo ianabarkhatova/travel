@@ -70,9 +70,8 @@ export const Promotion = () => {
                             imgSource={image5}
                             imgAlt={"Eiffel tower"}
                             text={"Breathtaking Views"}
-                            styleImage={{right: 0}}
-                            styleText={{left: 0}}
-                            styleIllustration={{right: 0}}
+                            styleText={{right: 0}}
+                            styleIllustration={{left: 0}}
                         />
                     </IllustrationWrapper>
                 </ContentWrapper>
@@ -83,16 +82,24 @@ export const Promotion = () => {
 };
 
 const StyledPromotion = styled.section`
+    min-height: 790px;
+    height: 100%;
+    
+    ${Container} {
+       //min-height: 750px;
+    }
 `
 
 const ContentWrapper = styled.div`
+    height: 100%;
     position: relative;
 `
 
 const PromotionWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 50px;
+    min-height: 790px;
 
     position: relative;
 `
@@ -104,8 +111,6 @@ const IllustrationWrapper = styled.div`
     height: 690px;
     bottom: 0;
     right: 0;
-    
-    
 `
 
 const PromotionCardWrapper = styled.div`
