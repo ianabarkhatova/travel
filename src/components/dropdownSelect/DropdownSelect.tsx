@@ -8,7 +8,8 @@ export const DropdownSelect = (props: {dropdownItems: Array<string>}) => {
         <SelectContainer>
             <StyledDropdownSelect>
                 {props.dropdownItems.map((item, index) => {
-                    return <Option key={index} value="">{item}
+                    return <Option key={index}
+                                   value="">{item}
                     </Option>
                 })}
             </StyledDropdownSelect>

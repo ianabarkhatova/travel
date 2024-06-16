@@ -7,6 +7,7 @@ import {FooterSectionTitle} from "./footer-section-title/FooterSectionTitle";
 import {Button} from "../../components/common/Button";
 import {FlexWrapper} from "../../components/common/FlexWrapper";
 import {Container} from "../../components/common/Container";
+import {theme} from "../../styles/Theme";
 
 const SocialItemData = [
     {
@@ -23,54 +24,21 @@ const SocialItemData = [
     }
 ]
 
-const FooterNavBarDataOne = [
-    {
-        itemName: "About Us"
-    },
+const FooterNavBarDataOne = ["About Us", "Careers", "Blog", "Pricing"]
 
-    {
-        itemName: "Careers"
-    },
+const FooterNavBarDataTwo = ["Maldives", "Los Angeles", "Las Vegas", "Toronto"]
 
-    {
-        itemName: "Blog"
-    },
-
-    {
-        itemName: "Pricing"
-    }
-]
-
-const FooterNavBarDataTwo = [
-    {
-        itemName: "Maldives"
-    },
-
-    {
-        itemName: "Los Angeles"
-    },
-
-    {
-        itemName: "Las Vegas"
-    },
-
-    {
-        itemName: "Toronto"
-    }
-]
 
 export const Footer = () => {
     return (
         <StyledFooter>
             <Container>
-                <FlexWrapper justify={"space-around"}>
+                <ContentWrapper>
                     <StyledGroupOne>
-                        <FlexWrapper direction={"column"}>
-                            <Logo/>
-                            <StyledFooterText>
-                                Travel helps companies manage payments easily.
-                            </StyledFooterText>
-                        </FlexWrapper>
+                        <Logo fill={"#000000"}/>
+                        <StyledFooterText>
+                            Travel helps companies manage payments easily.
+                        </StyledFooterText>
                         <SocialList>
                             {SocialItemData.map((s, index) => {
                                 return (
@@ -90,20 +58,12 @@ export const Footer = () => {
 
                     <StyledFooterNavBar>
                         <FooterSectionTitle>Company</FooterSectionTitle>
-                        {FooterNavBarDataOne.map((f, index) => {
-                            return (
-                                <NavItemList itemName={f.itemName}/>
-                            )
-                        })}
+                        <NavItemList NavItems={FooterNavBarDataOne}></NavItemList>
                     </StyledFooterNavBar>
 
                     <StyledFooterNavBar>
                         <FooterSectionTitle>Destinations</FooterSectionTitle>
-                        {FooterNavBarDataTwo.map((f, ) => {
-                            return (
-                                <NavItemList itemName={f.itemName}/>
-                            )
-                        })}
+                        <NavItemList NavItems={FooterNavBarDataTwo}></NavItemList>
                     </StyledFooterNavBar>
 
                     <StyledNewsLetter>
@@ -113,34 +73,42 @@ export const Footer = () => {
 
                         <StyledForm>
                             <StyledField placeholder={"Your email address"}></StyledField>
-                            <Button type={"submit"}>Submit</Button>
+                            <Button smaller type={"submit"}>Subscribe</Button>
                         </StyledForm>
 
                         <StyledNewsText>* Will send you weekly updates for your better
                             tour packages.</StyledNewsText>
                     </StyledNewsLetter>
-                </FlexWrapper>
-
+                </ContentWrapper>
 
                 <Copyright>Copyright @Xpro 2024. All Rights Reserved.</Copyright>
             </Container>
-
-
         </StyledFooter>
     );
 };
 
 const StyledFooter = styled.footer`
-    min-height: 484px;
-    background-color: rgba(184,255,154,0.79);
+    padding: 115px 0 40px;
+`
+
+const ContentWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 `
 
 const StyledFooterText = styled.span`
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #757095;
+    padding: 10px 0 30px;
 `
 
 const SocialList = styled.ul`
     display: flex;
     list-style: none;
+    gap: 14px;
 `
 
 const SocialItem = styled.li`
@@ -152,36 +120,68 @@ const SocialLink = styled.a`
 const Copyright = styled.small`
     display: flex;
     justify-content: center;
+    color: ${theme.colors.darkFooterFont};
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 100px;
+    
+    position: relative;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 2px;
+        background-color: ${theme.colors.secondaryBg};
+        
+        position: absolute;
+        top: 45%;
+    }
+    
 `
 
 const StyledGroupOne = styled.div`
+    display: flex;
+    flex-direction: column;
     max-width: 212px;
     max-height: 180px;
-    background-color: rgba(224,177,255,0.79);
 `
 
 const StyledFooterNavBar = styled.div`
 `
 
 const StyledNewsLetter = styled.div`
-    max-width: 388px;
-    background-color: rgba(255,218,44,0.79);
+    max-width: 390px;
 `
 
 const StyledForm = styled.form`
-    max-width: 388px;
+    width: 100%;
     max-height: 52px;
-    background-color: rgba(255,123,118,0.79);
+    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin-bottom: 24px;
 `
 
 const StyledField = styled.input`
-
+    max-width: 242px;
+    width: 100%;
+    height: 100%;
+    background-color: #EEEEFF;
+    border: none;
+    padding: 14px 0 14px 15px;
+    color: ${theme.colors.darkFooterFont};
+    font-family: "Manrope", sans-serif;    
+    font-size: 16px;
+    font-weight: 500;
 `
 
 const StyledNewsText = styled.span`
+    color: #757095;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
 `
 
 

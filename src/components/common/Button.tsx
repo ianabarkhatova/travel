@@ -41,7 +41,7 @@ export const Button = styled.button<ButtonPropsType>`
         font-weight: 500;
         font-style: normal;
         font-size: 16px;
-        width: 149px;
+        width: 148px;
         height: 52px;
     `}
     
