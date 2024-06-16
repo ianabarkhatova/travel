@@ -4,7 +4,6 @@ import backgroundImage from "../../../assets/images/reviews/reviews-1.webp"
 import {SectionDescription} from "../../../components/common/SectionDescription";
 import {SectionTitle} from "../../../components/common/SectionTitle";
 import {Slider} from "./slider/Slider";
-import {Container} from "../../../components/common/Container";
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
 
 export const Reviews = () => {
@@ -23,15 +22,9 @@ const StyledReviews = styled.section`
     background-image: url(${backgroundImage});
     width: 100%;
     
-    ${Container} {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
     ${SectionTitle} {
         max-width: 640px;
-        padding-bottom: 35px;
+        padding: 20px 0 35px;
     }
     
     ${SectionDescription} {
