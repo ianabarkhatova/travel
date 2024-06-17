@@ -146,6 +146,7 @@ const StyledForm = styled.form`
         min-width: 176px;
         text-align: center;
         margin: 0;
+        padding: 0;
     }
 
     @media screen and (max-width: 880px) {

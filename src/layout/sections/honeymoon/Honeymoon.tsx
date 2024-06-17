@@ -129,20 +129,16 @@ const IllustrationWrapper = styled.div`
 
         -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
-        mask-composite: exclude; 
+        mask-composite: exclude;
 
         position: absolute;
-        //top: 0;
-        right: 0;
-        left: 90px;
+        right: -14px;
         bottom: 0;
         z-index: -1;
 
-        @media ${theme.media.large} {
+        @media ${theme.media.xSmall} {
             display: none;
-        }
-        
-    }
+        }   
     
 `
 

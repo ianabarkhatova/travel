@@ -32,6 +32,7 @@ export const Button = styled.button<ButtonPropsType>`
         height: 56px;
         text-align: left;
         margin-top: 30px;
+        padding: 0 0 20px 5px;
     `}
 
     ${props => props.smaller && css<ButtonPropsType>`
