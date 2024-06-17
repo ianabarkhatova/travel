@@ -59,7 +59,10 @@ export const Main = () => {
 
                         <StyledForm>
                             <StyledFields>
-                                <StyledField placeholder={"Where to?"}></StyledField>
+                                <StyledFieldWrapper>
+                                    <StyledField placeholder={"Where to?"}/>
+                                </StyledFieldWrapper>
+
                                 <DropdownSelect dropdownItems={dropdownTravelItems}/>
                                 <DropdownSelect dropdownItems={dropdownDurationItems}/>
                             </StyledFields>
@@ -165,8 +168,26 @@ const StyledFields = styled.div`
     }
 `
 
+const StyledFieldWrapper = styled.div`
+    position: relative;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        background-color: #D0D0D0;
+        position: absolute;
+        width: 3px;
+        height: 48px;
+        border-radius: 25px;
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+    
+`
+
 const StyledField = styled.input`
-    //border: 1px solid rgba(243, 243, 243, 0.6);
+    position: relative;
+    
     border: none;
     border-radius: 5px;
     background-color: transparent;
