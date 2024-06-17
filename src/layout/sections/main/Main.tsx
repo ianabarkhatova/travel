@@ -142,6 +142,7 @@ const StyledForm = styled.form`
     ${Button} {
         min-width: 176px;
         text-align: center;
+        margin: 0;
     }
 
     @media screen and (max-width: 880px) {
