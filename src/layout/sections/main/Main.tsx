@@ -96,8 +96,6 @@ export const Main = () => {
 
 const StyledMain = styled.section`
     height: 100vh;
-    background-color: lightsalmon;
-    display: flex;
     background-image: url(${background});
     background-size: cover;
 `
@@ -182,6 +180,10 @@ const StyledFieldWrapper = styled.div`
         border-radius: 25px;
         transform: translate(-50%, -50%);
         top: 50%;
+
+        @media screen and (max-width: 880px) {
+            display: none;
+        }
     }
     
 `

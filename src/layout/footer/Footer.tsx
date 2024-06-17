@@ -8,6 +8,7 @@ import {Button} from "../../components/common/Button";
 import {FlexWrapper} from "../../components/common/FlexWrapper";
 import {Container} from "../../components/common/Container";
 import {theme} from "../../styles/Theme";
+import {font} from "../../styles/Common";
 
 const SocialItemData = [
     {
@@ -94,15 +95,24 @@ const StyledFooter = styled.footer`
 const ContentWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    @media ${theme.media.medium} {
+        //justify-content: space-around;
+    }
 `
 
 const StyledFooterText = styled.span`
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #757095;
     padding: 10px 0 30px;
+
+    ${font({
+        weight: 500,
+        Fmax: 16,
+        Fmin: 12,
+        family: '"Manrope", sans-serif',
+        color: "#757095",
+    })}
 `
 
 const SocialList = styled.ul`
@@ -120,11 +130,15 @@ const SocialLink = styled.a`
 const Copyright = styled.small`
     display: flex;
     justify-content: center;
-    color: ${theme.colors.darkFooterFont};
-    font-family: "Manrope", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
     padding-top: 100px;
+
+    ${font({
+        weight: 500,
+        Fmax: 14,
+        Fmin: 12,
+        family: '"Manrope", sans-serif',
+        color: theme.colors.darkFooterFont,
+    })}
     
     position: relative;
 
@@ -171,17 +185,24 @@ const StyledField = styled.input`
     background-color: #EEEEFF;
     border: none;
     padding: 14px 0 14px 15px;
-    color: ${theme.colors.darkFooterFont};
-    font-family: "Manrope", sans-serif;    
-    font-size: 16px;
-    font-weight: 500;
+
+    ${font({
+        weight: 500,
+        Fmax: 16,
+        Fmin: 12,
+        family: '"Manrope", sans-serif',
+        color: theme.colors.darkFooterFont,
+    })}
 `
 
 const StyledNewsText = styled.span`
-    color: #757095;
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    ${font({
+        weight: 500,
+        Fmax: 16,
+        Fmin: 12,
+        family: '"Manrope", sans-serif',
+        color: "#757095",
+    })}
 `
 
 

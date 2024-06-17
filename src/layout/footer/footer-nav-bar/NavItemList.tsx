@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 
 export const NavItemList = (props: {NavItems: Array<string>}) => {
@@ -35,10 +36,13 @@ const NavItem = styled.li`
 `
 
 const NavItemLink = styled.a`
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: ${theme.colors.darkFooterFont};
+    ${font({
+        weight: 500,
+        Fmax: 16,
+        Fmin: 12,
+        family: '"Manrope", sans-serif',
+        color: theme.colors.darkFooterFont,
+    })}
 `
 
 
