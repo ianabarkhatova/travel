@@ -139,6 +139,11 @@ const StyledForm = styled.form`
     margin: 35px 0 28px 0;
     padding: 39px 28px 35px;
 
+    ${Button} {
+        min-width: 176px;
+        text-align: center;
+    }
+
     @media screen and (max-width: 880px) {
         flex-direction: column;
         gap: 10px;

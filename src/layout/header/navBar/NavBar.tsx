@@ -26,11 +26,9 @@ export const NavBar = (props: { navBarItems: Array<string> }) => {
 
 const StyledUl = styled.ul`
     display: flex;
-    gap: calc(2vw + 30px);
-
-    @media ${theme.media.medium} {
-        gap: calc(1vw + 10px);
-    }
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
 
     @media ${theme.media.small} {
         display: none;
@@ -38,23 +36,13 @@ const StyledUl = styled.ul`
 `
 
 const StyleNavBar = styled.nav`
-    margin: 0 calc(5% + 50px);
-
-    @media ${theme.media.large} {
-        margin: 0 calc(4% + 40px); 
-    }
-
-    @media ${theme.media.medium} {
-        margin: 0 calc(3% + 30px); 
-    }
-
-    @media ${theme.media.small} {
-        margin: 0 calc(2% + 20px); 
-    }
+    max-width: 485px;
+    width: 100%;
 `
 
 const ListItem = styled.li`
     position: relative;
+    white-space: nowrap;
 `
 
 const Link = styled.a`

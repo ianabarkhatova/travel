@@ -14,12 +14,12 @@ export const Header = () => {
     return (
         <StyledHeader>
             <Container>
-                <FlexWrapper justify={"space-between"} align={"center"}>
+                <ContentWrapper>
                     <Logo/>
                     <NavBar navBarItems={navBarItems}/>
                     <NavBarMobile navBarItems={navBarItems}></NavBarMobile>
                     <Button type={"submit"} small>Get in Touch</Button>
-                </FlexWrapper>
+                </ContentWrapper>
             </Container>
         </StyledHeader>
     );
@@ -34,11 +34,19 @@ const StyledHeader = styled.header`
     z-index: 99999;
     
     ${Button} {
+        min-width: 152px;
+        
         @media ${theme.media.small} {
             display: none;
         }
     }
-    
+`
+
+const ContentWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 `
 
 

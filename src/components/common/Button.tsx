@@ -31,7 +31,6 @@ export const Button = styled.button<ButtonPropsType>`
         width: 176px;
         height: 56px;
         text-align: left;
-        padding: 0 0 20px 5px;
         margin-top: 30px;
     `}
 
