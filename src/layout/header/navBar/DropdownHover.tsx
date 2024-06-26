@@ -86,13 +86,13 @@ const Link = styled.a`
 
     position: relative;
 
-    // @media ${theme.media.small} {
-    //     font-size: 26px;
-    // }
-
     &:hover {
         &::before {
             height: 3px;
+
+            @media ${theme.media.small} {
+                display: none;
+            }
         }
     }
 

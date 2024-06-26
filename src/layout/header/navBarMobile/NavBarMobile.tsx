@@ -33,15 +33,14 @@ export const NavBarMobile = (props: { navBarItems: Array<string> }) => {
 
 const StyledNavBarMobile = styled.nav`
     display: none;
-    margin: 0 calc(5% + 50px);
 
-    @media ${theme.media.large} {
-        margin: 0 calc(4% + 40px); 
-    }
-
-    @media ${theme.media.medium} {
-        margin: 0 calc(3% + 30px); 
-    }
+    // @media ${theme.media.large} {
+    //     margin: 0 calc(4% + 40px); 
+    // }
+    //
+    // @media ${theme.media.medium} {
+    //     margin: 0 calc(3% + 30px); 
+    // }
 
     @media ${theme.media.small} {
         margin: 0 calc(2% + 20px); 
@@ -145,6 +144,10 @@ const Link = styled.a`
     &:hover {
         &::before {
             height: 3px;
+
+            @media ${theme.media.small} {
+                display: none;
+            }
         }
     }
     

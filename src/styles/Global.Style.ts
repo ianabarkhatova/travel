@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
     }
     
     a {
@@ -38,5 +39,10 @@ export const GlobalStyle = createGlobalStyle`
         @media ${theme.media.small} {
             padding: 80px 0;
         }
+    }
+
+    img, video {
+        max-width: 100%;
+        height: auto;
     }
 `

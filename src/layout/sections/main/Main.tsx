@@ -95,7 +95,6 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-    height: 100vh;
     background-image: url(${background});
     background-size: cover;
 `

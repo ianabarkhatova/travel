@@ -11,17 +11,28 @@ import {theme} from "../../styles/Theme";
 const navBarItems = ["Home", "About", "Upcoming Packages"]
 
 export const Header = () => {
+
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 768;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleWindowResize);
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
+
     return (
         <StyledHeader>
             <Container>
                 <ContentWrapper>
                     <Logo/>
-                    <NavBar navBarItems={navBarItems}/>
-                    <NavBarMobile navBarItems={navBarItems}></NavBarMobile>
+                    {width < breakpoint ? <NavBarMobile navBarItems={navBarItems}/>
+                        : <NavBar navBarItems={navBarItems}/>}
+
                     <Button type={"submit"} small>Get in Touch</Button>
                 </ContentWrapper>
             </Container>
-        </StyledHeader>
+        // </StyledHeader>
     );
 };
 
@@ -34,7 +45,7 @@ const StyledHeader = styled.header`
     z-index: 99999;
     
     ${Button} {
-        min-width: 152px;
+        max-width: 152px;
         
         @media ${theme.media.small} {
             display: none;
