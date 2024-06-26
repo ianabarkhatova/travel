@@ -1,12 +1,10 @@
 import React from 'react';
-import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
-import {NavBar} from "./navBar/NavBar";
+import {NavBarDesktop} from "./navBarDesktop/NavBarDesktop";
 import {Button} from "../../components/common/Button";
-import {FlexWrapper} from "../../components/common/FlexWrapper";
 import {Container} from "../../components/common/Container";
 import {NavBarMobile} from "./navBarMobile/NavBarMobile";
-import {theme} from "../../styles/Theme";
+import {S} from "./Header_Styles"
 
 const navBarItems = ["Home", "About", "Upcoming Packages"]
 
@@ -22,42 +20,17 @@ export const Header = () => {
     }, []);
 
     return (
-        <StyledHeader>
+        <S.Header>
             <Container>
-                <ContentWrapper>
+                <S.ContentWrapper>
                     <Logo/>
                     {width < breakpoint ? <NavBarMobile navBarItems={navBarItems}/>
-                        : <NavBar navBarItems={navBarItems}/>}
+                                        : <NavBarDesktop navBarItems={navBarItems}/>}
 
                     <Button type={"submit"} small>Get in Touch</Button>
-                </ContentWrapper>
+                </S.ContentWrapper>
             </Container>
-        // </StyledHeader>
+        </S.Header>
     );
 };
-
-const StyledHeader = styled.header`
-    position: fixed;
-    padding: 50px 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-    
-    ${Button} {
-        max-width: 152px;
-        
-        @media ${theme.media.small} {
-            display: none;
-        }
-    }
-`
-
-const ContentWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-`
-
 

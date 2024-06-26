@@ -104,7 +104,6 @@ const PromotionWrapper = styled.div`
     @media ${theme.media.large} {
         justify-content: center;
         align-items: center;
-        
     }
 `
 

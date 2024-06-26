@@ -1,25 +1,7 @@
-import React from 'react';
 import styled from "styled-components";
-import {theme} from "../../../styles/Theme";
+import {theme} from "../../../../styles/Theme";
 
-export const DropdownHover = (props: {dropdownHoverItems: Array<string>}) => {
-    return (
-        <StyledDropdownHover>
-            <Link href="#">Services</Link>
-            <ul>
-                {props.dropdownHoverItems.map((item, index) => {
-                    return (
-                        <ListItem key={index}>
-                            <DropdownLink href="#">{item}</DropdownLink>
-                        </ListItem>
-                    )
-                })}
-            </ul>
-        </StyledDropdownHover>
-    );
-};
-
-const StyledDropdownHover = styled.li`
+const DropdownHover = styled.li`
     position: relative;
     
     ul {
@@ -108,5 +90,10 @@ const Link = styled.a`
         right: 8px;
 `
 
-
+export const S = {
+    DropdownHover,
+    DropdownLink,
+    ListItem,
+    Link,
+}
 
