@@ -9,6 +9,7 @@ import image4 from "../../../assets/images/promotion/europe-4.webp"
 import image5 from "../../../assets/images/promotion/europe-5.webp"
 import {Illustration} from "../../../components/illustration/Illustration";
 import {Container} from "../../../components/common/Container";
+import {theme} from "../../../styles/Theme";
 
 
 const promotionData = [
@@ -84,13 +85,11 @@ export const Promotion = () => {
 const StyledPromotion = styled.section`
     min-height: 790px;
     height: 100%;
-    
-    ${Container} {
-       //min-height: 750px;
-    }
 `
 
 const ContentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
     height: 100%;
     position: relative;
 `
@@ -98,23 +97,42 @@ const ContentWrapper = styled.div`
 const PromotionWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 70px;
     min-height: 790px;
-
     position: relative;
+    
+    @media ${theme.media.large} {
+        justify-content: center;
+        align-items: center;
+        
+    }
 `
 
 const IllustrationWrapper = styled.div`
     position: absolute;
     max-width: 552px;
     width: 100%;
-    height: 690px;
+    min-height: 690px;
     bottom: 0;
     right: 0;
+
+    & > * {
+        @media ${theme.media.large} {
+            display: none;
+        }
+    }
 `
 
 const PromotionCardWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
     gap: 56px;
+
+    @media ${theme.media.medium} {
+        justify-content: center;
+        align-items: center;
+        max-width: 500px;
+        gap: 70px;
+    }
 `
 
