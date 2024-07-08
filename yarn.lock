@@ -8766,6 +8766,11 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
+tunnel@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/tunnel/-/tunnel-0.0.2.tgz#f23bcd8b7a7b8a864261b2084f66f93193396334"
+  integrity sha512-PjBRT+4Y/UH3q/lnjXosoaB+hY1yNH2TXWMjPSF1bAIdZmUDAJ2lBPt5s8jTH1e7sgb3nleK889E9vyY4NXpYw==
+
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.4.0.tgz#07b8203bfa7056c0657050e3ccd2c37730bab8f1"
@@ -9144,6 +9149,13 @@ websocket-extensions@>=0.1.1:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
+
+wget@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/wget/-/wget-0.0.1.tgz#8bb81af0b8e60b5df262d3c81e5737e1f4931e53"
+  integrity sha512-iKDSrvontU6lAQq89bNn7me3HU/+Cau7NedEYz607TOS4n0AgksloCt2UwU+ZH5Kn0Lq+XbJ6STOpnhpjicvOQ==
+  dependencies:
+    tunnel "0.0.2"
 
 whatwg-encoding@^1.0.5:
   version "1.0.5"

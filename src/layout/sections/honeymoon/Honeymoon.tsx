@@ -6,7 +6,6 @@ import romantic4 from "../../../assets/images/romantic/romantic-4.png"
 import styled from "styled-components";
 import {Package} from "../../../components/package/Package";
 import {Image} from "../../../components/image/Image";
-import {Illustration} from "../../../components/illustration/Illustration";
 import {Container} from "../../../components/common/Container";
 import {theme} from "../../../styles/Theme";
 
@@ -43,25 +42,6 @@ export const Honeymoon = () => {
         <StyledHoneymoon>
             <Container>
                 <ContentWrapper>
-                    <StyledImages>
-                        {imagesData.map((i, index) => {
-                            return(
-                                <Image src={i.src}
-                                       alt={i.alt}
-                                       style={i.style}
-                                       key={index}
-                                />
-                            )
-                        })}
-
-                        <IllustrationWrapper>
-                            <Illustration imgSource={romantic4}
-                                          imgAlt={"couple hugging in front of the sea"}
-                                          text={"Honeymoon Packages"}
-                                          styleText={{left: 0}}
-                            />
-                        </IllustrationWrapper>
-                    </StyledImages>
 
                     {honeymoonData.map((h,index) => {
                         return <Package
