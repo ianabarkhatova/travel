@@ -1,10 +1,10 @@
 import React from 'react';
 import {Button} from "../common/Button";
-import styled from "styled-components";
 import {SectionDescription} from "../common/SectionDescription";
 import {SectionTitle} from "../common/SectionTitle";
 import {FlexWrapper} from "../common/FlexWrapper";
-import {theme} from "../../styles/Theme";
+import {S} from './Package_Styles'
+
 
 type PackagePropsType = {
     description: string
@@ -15,30 +15,15 @@ type PackagePropsType = {
 export const Package = (props: PackagePropsType) => {
     return (
         <FlexWrapper>
-            <StyledPackage>
+            <S.Package>
                 <SectionDescription align={"left"}>{props.description}</SectionDescription>
                 <SectionTitle align={"left"}>{props.title}</SectionTitle>
-                <PackageText>{props.text}</PackageText>
+                <S.PackageText>{props.text}</S.PackageText>
                 <Button type={"submit"} big>View Packages</Button>
-            </StyledPackage>
+            </S.Package>
         </FlexWrapper>
     );
 };
-
-const StyledPackage = styled.div`
-    max-width: 584px;
-    
-    ${SectionTitle} {
-        padding: 20px 0 30px;
-    }
-`
-
-const PackageText = styled.p`
-    color: ${theme.colors.darkSmallerFont};
-    font-size: 16px;
-    font-weight: 400;
-    text-align: left;
-`
 
 
 

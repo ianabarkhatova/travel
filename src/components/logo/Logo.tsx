@@ -1,6 +1,7 @@
 import React from 'react';
 import {Icon} from "../icon/Icon";
-import styled from "styled-components";
+import {S} from './Logo_Styles'
+
 
 type LogoPropsType = {
     fill?: string
@@ -8,24 +9,12 @@ type LogoPropsType = {
 
 export const Logo: React.FC<LogoPropsType> = (props: LogoPropsType) => {
     return (
-        <Link href="">
+        <S.Link href="">
             <Icon iconId={'logo'} width={"100"} height={"41"} viewBox={"0 0 100 41"} fill={props.fill}/>
-            <StyledIcon>
+            <S.Icon>
                 <Icon iconId={"arrow"} width={"96px"} height={"26px"} viewBox={"0 0 96 32"}/>
-            </StyledIcon>
+            </S.Icon>
 
-        </Link>
+        </S.Link>
     );
 };
-
-const Link = styled.a`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-`
-
-const StyledIcon = styled.div`
-    position: absolute;
-    top: 16px;
-    left: 28px;
-`

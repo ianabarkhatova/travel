@@ -1,14 +1,11 @@
 import React from 'react';
-import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
 import {Icon} from "../../components/icon/Icon";
 import {NavItemList} from "./footer-nav-bar/NavItemList";
 import {FooterSectionTitle} from "./footer-section-title/FooterSectionTitle";
 import {Button} from "../../components/common/Button";
-import {FlexWrapper} from "../../components/common/FlexWrapper";
 import {Container} from "../../components/common/Container";
-import {theme} from "../../styles/Theme";
-import {font} from "../../styles/Common";
+import {S} from './Footer_Styles'
 
 const SocialItemData = [
     {
@@ -32,178 +29,61 @@ const FooterNavBarDataTwo = ["Maldives", "Los Angeles", "Las Vegas", "Toronto"]
 
 export const Footer = () => {
     return (
-        <StyledFooter>
+        <S.Footer>
             <Container>
-                <ContentWrapper>
-                    <StyledGroupOne>
+                <S.ContentWrapper>
+                    <S.GroupOne>
                         <Logo fill={"#000000"}/>
-                        <StyledFooterText>
+                        <S.FooterText>
                             Travel helps companies manage payments easily.
-                        </StyledFooterText>
-                        <SocialList>
+                        </S.FooterText>
+                        <S.SocialList>
                             {SocialItemData.map((s, index) => {
                                 return (
-                                    <SocialItem key={index}>
-                                        <SocialLink>
+                                    <S.SocialItem key={index}>
+                                        <S.SocialLink>
                                             <Icon
                                                 iconId={s.iconId}
                                                 width={"22"}
                                                 height={"22"}
                                                 viewBox={"0 0 22 22"}/>
-                                        </SocialLink>
-                                    </SocialItem>
+                                        </S.SocialLink>
+                                    </S.SocialItem>
                                 )
                             })}
-                        </SocialList>
-                    </StyledGroupOne>
+                        </S.SocialList>
+                    </S.GroupOne>
 
-                    <StyledFooterNavBar>
+                    <S.FooterNavBar>
                         <FooterSectionTitle>Company</FooterSectionTitle>
                         <NavItemList NavItems={FooterNavBarDataOne}></NavItemList>
-                    </StyledFooterNavBar>
+                    </S.FooterNavBar>
 
-                    <StyledFooterNavBar>
+                    <S.FooterNavBar>
                         <FooterSectionTitle>Destinations</FooterSectionTitle>
                         <NavItemList NavItems={FooterNavBarDataTwo}></NavItemList>
-                    </StyledFooterNavBar>
+                    </S.FooterNavBar>
 
-                    <StyledNewsLetter>
+                    <S.NewsLetter>
                         <FooterSectionTitle>
                             Join Our Newsletter
                         </FooterSectionTitle>
 
-                        <StyledForm>
-                            <StyledField placeholder={"Your email address"}></StyledField>
+                        <S.Form>
+                            <S.Field placeholder={"Your email address"}></S.Field>
                             <Button smaller type={"submit"}>Subscribe</Button>
-                        </StyledForm>
+                        </S.Form>
 
-                        <StyledNewsText>* Will send you weekly updates for your better
-                            tour packages.</StyledNewsText>
-                    </StyledNewsLetter>
-                </ContentWrapper>
+                        <S.NewsText>* Will send you weekly updates for your better
+                            tour packages.</S.NewsText>
+                    </S.NewsLetter>
+                </S.ContentWrapper>
 
-                <Copyright>Copyright @Xpro 2024. All Rights Reserved.</Copyright>
+                <S.Copyright>Copyright @Xpro 2024. All Rights Reserved.</S.Copyright>
             </Container>
-        </StyledFooter>
+        </S.Footer>
     );
 };
-
-const StyledFooter = styled.footer`
-    padding: 115px 0 40px;
-`
-
-const ContentWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-
-    @media ${theme.media.medium} {
-        //justify-content: space-around;
-    }
-`
-
-const StyledFooterText = styled.span`
-    padding: 10px 0 30px;
-
-    ${font({
-        weight: 500,
-        Fmax: 16,
-        Fmin: 12,
-        family: '"Manrope", sans-serif',
-        color: "#757095",
-    })}
-`
-
-const SocialList = styled.ul`
-    display: flex;
-    list-style: none;
-    gap: 14px;
-`
-
-const SocialItem = styled.li`
-`
-
-const SocialLink = styled.a`
-`
-
-const Copyright = styled.small`
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-
-    ${font({
-        weight: 500,
-        Fmax: 14,
-        Fmin: 12,
-        family: '"Manrope", sans-serif',
-        color: theme.colors.darkFooterFont,
-    })}
-    
-    position: relative;
-
-    &::before {
-        content: "";
-        display: inline-block;
-        width: 100%;
-        height: 2px;
-        background-color: ${theme.colors.secondaryBg};
-        
-        position: absolute;
-        top: 45%;
-    }
-    
-`
-
-const StyledGroupOne = styled.div`
-    display: flex;
-    flex-direction: column;
-    max-width: 212px;
-    max-height: 180px;
-`
-
-const StyledFooterNavBar = styled.div`
-`
-
-const StyledNewsLetter = styled.div`
-    max-width: 390px;
-`
-
-const StyledForm = styled.form`
-    width: 100%;
-    max-height: 52px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 24px;
-`
-
-const StyledField = styled.input`
-    max-width: 242px;
-    width: 100%;
-    height: 100%;
-    background-color: #EEEEFF;
-    border: none;
-    padding: 14px 0 14px 15px;
-
-    ${font({
-        weight: 500,
-        Fmax: 16,
-        Fmin: 12,
-        family: '"Manrope", sans-serif',
-        color: theme.colors.darkFooterFont,
-    })}
-`
-
-const StyledNewsText = styled.span`
-    ${font({
-        weight: 500,
-        Fmax: 16,
-        Fmin: 12,
-        family: '"Manrope", sans-serif',
-        color: "#757095",
-    })}
-`
 
 
 

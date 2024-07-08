@@ -1,13 +1,12 @@
 import React from 'react';
-import styled from "styled-components";
 import {Package} from "../../../components/package/Package";
 import image1 from "../../../assets/images/promotion/europe-1.webp"
 import image2 from "../../../assets/images/promotion/europe-2.webp"
 import image3 from "../../../assets/images/promotion/europe-3.webp"
 import image4 from "../../../assets/images/promotion/europe-4.webp"
 import {Container} from "../../../components/common/Container";
-import {theme} from "../../../styles/Theme";
 import {PromotionCard} from "./promotionCard/PromotionCard";
+import {S} from './Promotion_Styles'
 
 
 const promotionData = [
@@ -43,10 +42,10 @@ const PromotionCardData = [
 
 export const Promotion = () => {
     return (
-        <StyledPromotion>
+        <S.Promotion>
             <Container>
-                <ContentWrapper>
-                    <PromotionWrapper>
+                <S.ContentWrapper>
+                    <S.PromotionWrapper>
                         {promotionData.map((p,index) => {
                             return <Package
                                 description={p.description} key={index}
@@ -55,56 +54,21 @@ export const Promotion = () => {
                             />
                         })}
 
-                        <PromotionCardWrapper>
+                        <S.PromotionCardWrapper>
                             {PromotionCardData.map((p, index) => {
                                 return <PromotionCard imgSource={p.imgSource} key={index}
                                                       imgAlt={p.imgAlt}
                                                       price={p.price}/>
                             })}
-                        </PromotionCardWrapper>
-                    </PromotionWrapper>
+                        </S.PromotionCardWrapper>
+                    </S.PromotionWrapper>
 
-                </ContentWrapper>
+                </S.ContentWrapper>
             </Container>
 
-        </StyledPromotion>
+        </S.Promotion>
     );
 };
 
-const StyledPromotion = styled.section`
-    min-height: 790px;
-    height: 100%;
-`
 
-const ContentWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative;
-`
-
-const PromotionWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-    min-height: 790px;
-    position: relative;
-    
-    @media ${theme.media.large} {
-        justify-content: center;
-        align-items: center;
-    }
-`
-
-const PromotionCardWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 56px;
-
-    @media ${theme.media.large} {
-        justify-content: center;
-        align-items: center;
-        max-width: 600px;
-    }
-`
 

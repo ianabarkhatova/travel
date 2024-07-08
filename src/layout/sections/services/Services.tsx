@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from "styled-components";
 import {FlexWrapper} from "../../../components/common/FlexWrapper";
 import {SectionDescription} from "../../../components/common/SectionDescription";
 import {SectionTitle} from "../../../components/common/SectionTitle";
@@ -9,6 +8,8 @@ import service2 from "../../../assets/images/services/service-2.png";
 import service3 from "../../../assets/images/services/service-3.png";
 import service4 from "../../../assets/images/services/service-4.png";
 import {Container} from "../../../components/common/Container";
+import {S} from './Services_Styles'
+
 
 const servicesData = [
     {
@@ -40,7 +41,7 @@ const servicesData = [
 
 export const Services = () => {
     return (
-        <StyledServices>
+        <S.Services>
             <Container>
                 <SectionDescription>CATEGORY</SectionDescription>
                 <SectionTitle>We Offer Best Services</SectionTitle>
@@ -56,14 +57,9 @@ export const Services = () => {
                     })}
                 </FlexWrapper>
             </Container>
-        </StyledServices>
+        </S.Services>
     );
 };
 
-const StyledServices = styled.section`
-    
-    ${SectionTitle} {
-        margin: 20px 0 66px;
-    }
-`
+
 

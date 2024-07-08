@@ -8,6 +8,8 @@ import {TripCard} from "./tripCard/TripCard";
 import {OngoingTripCard} from "./ongoingTripCard/OngoingTripCard";
 import {Container} from "../../../components/common/Container";
 import {S} from "./Favourite_Styles"
+
+
 const FavouriteCardsData = [
     {
         iconId: "destination",
