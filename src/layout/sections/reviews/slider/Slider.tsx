@@ -1,42 +1,63 @@
 import React from 'react';
-import photo from "../../../../assets/images/reviews/reviews-2.webp"
-import {Icon} from "../../../../components/icon/Icon";
-import {FlexWrapper} from "../../../../components/common/FlexWrapper";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import {S} from './Slider_Styles'
+import {FlexWrapper} from "../../../../components/common/FlexWrapper";
+import {Icon} from "../../../../components/icon/Icon";
+import photo from "../../../../assets/images/reviews/reviews-2.webp";
+import './../../../../styles/slider.css'
 
-export const Slider = () => {
+type SlidePropsType = {
+    photo: string
+    text: string
+    userName: string
+}
+
+const Slide = (props: SlidePropsType) => {
     return (
-        <S.Slider>
-            <S.Slide>
-                <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
-                    <S.Photo src={photo} height={"150px"} width={"150px"}/>
+        <S.Slide>
+            <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
+                <S.Photo src={props.photo}/>
 
-                    <S.MainContent>
-                        <S.Icon>
-                            <Icon iconId={"commas"}/>
-                        </S.Icon>
+                <S.MainContent>
+                    <S.Icon>
+                        <Icon iconId={"commas"}/>
+                    </S.Icon>
 
-                        <S.ContentWrapper>
-                            <S.Text>
-                                Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam et recusandae
-                                molestiae sit iure unde aut voluptate quaerat. Id sunt provident quo possimus impedit
-                                vel doloremque obcaecati qui ullam consectetur et ipsum omnis.
-                            </S.Text>
-                            <S.Name>
-                                Christine Beckam - Designer
-                            </S.Name>
-                        </S.ContentWrapper>
-                    </S.MainContent>
+                    <S.ContentWrapper>
+                        <S.Text>{props.text}</S.Text>
+                        <S.Name>{props.userName}</S.Name>
+                    </S.ContentWrapper>
+                </S.MainContent>
+            </FlexWrapper>
+        </S.Slide>
+    )
+}
 
-                    <S.Pagination>
-                        <span></span>
-                        <span className={"active"}></span>
-                        <span></span>
-                    </S.Pagination>
-                </FlexWrapper>
+const items = [
+    <Slide
+        text={"Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam et recusandaemolestiae sit iure unde aut voluptate quaerat. Id sunt provident quo possimus impeditvel doloremque obcaecati qui ullam consectetur et ipsum omnis."}
+        userName={"Christine Beckam - Designer"}
+        photo={photo}
+    />,
+    <Slide
+        text={"Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam et recusandaemolestiae sit iure unde aut voluptate quaerat. Id sunt provident quo possimus impeditvel doloremque obcaecati qui ullam consectetur et ipsum omnis."}
+        userName={"Kate Rowland - Architect"}
+        photo={photo}/>,
+    <Slide
+        text={"Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam et recusandaemolestiae sit iure unde aut voluptate quaerat. Id sunt provident quo possimus impeditvel doloremque obcaecati qui ullam consectetur et ipsum omnis."}
+        userName={"Julia Ivanova - Analyst"}
+        photo={photo}/>
+];
 
-            </S.Slide>
-        </S.Slider>
-    );
-};
+export const Slider = () => (
+    <S.Slider>
+        <AliceCarousel
+            mouseTracking
+            items={items}
+        />
+    </S.Slider>
+
+);
+
 

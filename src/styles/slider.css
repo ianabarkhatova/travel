@@ -1,0 +1,57 @@
+.alice-carousel__dots {
+    margin: 0;
+}
+
+.alice-carousel__dots-item:not(.__custom) {
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+
+    background-color: white;
+    border-radius: 40px;
+}
+
+.alice-carousel__dots-item:not(.__custom):not(:last-child) {
+    margin-right: 18px;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active {
+    background-color: #DF6951;
+}
+
+.alice-carousel__dots-item:not(.__custom) {
+    background-color: #E5E5EA;
+}
+
+.alice-carousel__prev-btn, .alice-carousel__next-btn {
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    width: 62px;
+    height: 62px;
+    box-shadow: 0px 20px 35px 0px rgba(115, 115, 115, 0.15);
+    background: rgb(115, 115, 115);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    @media screen and (max-width: 650px) {
+        display: none;
+    }
+}
+
+.alice-carousel__prev-btn {
+    left: -40px;
+}
+
+.alice-carousel__next-btn {
+    right: -40px;
+}
+
+.alice-carousel__prev-btn [data-area]::after, .alice-carousel__next-btn [data-area]::after {
+   color: white;
+}
+
