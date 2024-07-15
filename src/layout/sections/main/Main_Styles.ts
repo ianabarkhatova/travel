@@ -36,7 +36,7 @@ const MainTitle = styled.h2`
 
 const Form = styled.form`
     width: 100%;
-    max-width: 844px;
+    max-width: 860px;
     border-radius: 5px;
 
     backdrop-filter: blur(14px);
@@ -46,7 +46,7 @@ const Form = styled.form`
     justify-content: center;
     align-items: center;
     gap: calc(50px + 2vw);
-    margin: 35px 0 28px 0;
+    margin: 35px 0 80px 0;
     padding: 39px 28px 35px;
 
     ${Button} {
@@ -69,6 +69,7 @@ const Form = styled.form`
 const Fields = styled.div`
     display: flex;
     width: 100%;
+    gap: 10px;
 
     @media screen and (max-width: 880px) {
         flex-direction: column;
@@ -77,6 +78,7 @@ const Fields = styled.div`
 `
 
 const FieldWrapper = styled.div`
+    display: flex;
     position: relative;
 
     &::after {
@@ -89,6 +91,7 @@ const FieldWrapper = styled.div`
         border-radius: 25px;
         transform: translate(-50%, -50%);
         top: 50%;
+        right: 0;
 
         @media screen and (max-width: 880px) {
             display: none;

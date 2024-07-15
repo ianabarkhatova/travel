@@ -12,9 +12,9 @@ import {Container} from "../../../components/common/Container";
 import {S} from './Main_Styles';
 
 
-const dropdownTravelItems = ["Travel Type", "Family", "Single", "Friends"]
+const options1 = ["Family", "Single", "Friends"]
 
-const dropdownDurationItems = ["Duration", "3 days", "5 days", "7 days"]
+const options2 = ["3 days", "5 days", "7 days"]
 
 const dropdownImagesData = [
     {
@@ -60,8 +60,8 @@ export const Main = () => {
                                     <S.Field placeholder={"Where to?"}/>
                                 </S.FieldWrapper>
 
-                                <DropdownSelect dropdownItems={dropdownTravelItems}/>
-                                <DropdownSelect dropdownItems={dropdownDurationItems}/>
+                                <DropdownSelect options={options1} placeholder={"Travel type"}/>
+                                <DropdownSelect options={options2} placeholder={"Duration"}/>
                             </S.Fields>
 
                             <Button big type={"submit"}>Submit</Button>

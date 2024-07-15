@@ -4,6 +4,7 @@ const Link = styled.a`
     display: flex;
     flex-direction: column;
     position: relative;
+    cursor: pointer;
 `
 
 const Icon = styled.div`
