@@ -25,6 +25,7 @@ export const dropdownSelectStyles = {
     singleValue: (provided: CSSObjectWithLabel) => ({
         ...provided,
         color: theme.colors.lightFont,
+        margin: 0,
     }),
     dropdownIndicator: (provided: CSSObjectWithLabel, state: any) => ({
         ...provided,
@@ -56,5 +57,9 @@ export const dropdownSelectStyles = {
         fontFamily: "Poppins, sans-serif",
         fontWeight: 400,
         fontSize: 20,
+    }),
+    valueContainer: (provided: CSSObjectWithLabel) => ({
+        ...provided,
+        padding: 0,
     }),
 };
