@@ -41,7 +41,7 @@ const servicesData = [
 
 export const Services = () => {
     return (
-        <S.Services>
+        <S.Services id={"services"}>
             <Container>
                 <SectionDescription>CATEGORY</SectionDescription>
                 <SectionTitle>We Offer Best Services</SectionTitle>

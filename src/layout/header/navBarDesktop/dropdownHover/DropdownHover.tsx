@@ -1,15 +1,35 @@
 import React from 'react';
 import {S} from "./DropdownHover_Styles"
 
-export const DropdownHover = (props: {dropdownHoverItems: Array<string>}) => {
+
+const dropdownHoverItems = [
+    {
+        title: "Honeymoon Packages",
+        href: "honeymoon-packages"
+    },
+    {
+        title: "Tours Packages",
+        href: "tours-packages"
+    },
+    {
+        title: "Musical Events",
+        href: "music-events"
+    },
+    {
+        title: "Build Package",
+        href: "build-package"
+    }
+]
+
+export const DropdownHover = () => {
     return (
         <S.DropdownHover>
-            <S.Link href="#">Services</S.Link>
+            <S.Link href="#services">Services</S.Link>
             <ul>
-                {props.dropdownHoverItems.map((item, index) => {
+                {dropdownHoverItems.map((item, index) => {
                     return (
                         <S.ListItem key={index}>
-                            <S.DropdownLink href="#">{item}</S.DropdownLink>
+                            <S.DropdownLink href={`#${item.href}`}>{item.title}</S.DropdownLink>
                         </S.ListItem>
                     )
                 })}

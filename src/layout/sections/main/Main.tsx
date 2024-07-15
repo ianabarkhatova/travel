@@ -46,7 +46,7 @@ const dropdownImagesData = [
 
 export const Main = () => {
     return (
-        <S.Main>
+        <S.Main id={"home"}>
             <Container>
                 <S.MainContent>
                     <FlexWrapper direction={"column"} justify={"space-around"}>

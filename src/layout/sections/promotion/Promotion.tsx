@@ -42,7 +42,7 @@ const PromotionCardData = [
 
 export const Promotion = () => {
     return (
-        <S.Promotion>
+        <S.Promotion id={"tours-packages"}>
             <Container>
                 <S.ContentWrapper>
                     <S.PromotionWrapper>

@@ -1,11 +1,104 @@
+// Desktop
+
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
+
+const NavBarDesktop = styled.nav`
+    max-width: 485px;
+    width: 100%;
+    
+    ul {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    li {
+        position: relative;
+        white-space: nowrap;
+    }
+    
+    a {
+        color: ${theme.colors.lightFont};
+        font-family: "Figtree", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+
+        &:hover {
+            &::before {
+                height: 3px;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+
+            background-color: ${theme.colors.accent};
+            border-radius: 34px;
+
+            position: absolute;
+            bottom: -2px;
+            left: 8px;
+            right: 8px;
+        }
+    }
+`
+
+//Mobile
 
 const NavBarMobile = styled.nav`
 
     @media ${theme.media.small} {
         margin: 0 calc(2% + 20px); 
     }
+    
+    ul {
+        display: flex;
+        gap: calc(2vw + 30px);
+        flex-direction: column;
+        align-items: center;
+
+        @media ${theme.media.medium} {
+            gap: calc(1vw + 10px);
+        }
+    }
+    
+    li {
+        position: relative;
+    }
+    
+    a {
+        color: ${theme.colors.lightFont};
+        font-family: "Figtree", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+
+        &:hover {
+            &::before {
+                height: 3px;
+
+                @media ${theme.media.small} {
+                    display: none;
+                }
+            }
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+
+            background-color: ${theme.colors.accent};
+            border-radius: 34px;
+
+            position: absolute;
+            bottom: 0;
+            left: 8px;
+            right: 8px;
+        }
+    }
+    
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`
@@ -15,6 +108,7 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
     width: 200px;
     height: 200px;
     z-index: 9999999;
+}
 
     span {
         display: block;
@@ -60,17 +154,6 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
     }
 `
 
-const Ul = styled.ul`
-    display: flex;
-    gap: calc(2vw + 30px);
-    flex-direction: column;
-    align-items: center;
-
-    @media ${theme.media.medium} {
-        gap: calc(1vw + 10px);
-    }
-`
-
 const UlPopUp = styled.div<{isOpen: boolean}>`
     position: fixed;
     top: 0;
@@ -80,6 +163,7 @@ const UlPopUp = styled.div<{isOpen: boolean}>`
     z-index: 99999;
     background-color: rgba(243, 243, 243, 0.6);
     backdrop-filter: blur(14px);
+    //width: 100vw;
     
     display: none;
     
@@ -90,46 +174,10 @@ const UlPopUp = styled.div<{isOpen: boolean}>`
     `}
 `
 
-
-const ListItem = styled.li`
-    position: relative;
-`
-
-const Link = styled.a`
-    color: ${theme.colors.lightFont};
-    font-family: "Figtree", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-
-    &:hover {
-        &::before {
-            height: 3px;
-
-            @media ${theme.media.small} {
-                display: none;
-            }
-        }
-    }
-    
-    &::before {
-        content: "";
-        display: inline-block; 
-        
-        background-color: ${theme.colors.accent};
-        border-radius: 34px;
-       
-        position: absolute;
-        bottom: 0;
-        left: 8px;
-        right: 8px;
-    }
-`
-
 export const S = {
+    NavBarDesktop,
     NavBarMobile,
     BurgerButton,
-    Ul,
     UlPopUp,
-    ListItem,
-    Link
 }
+

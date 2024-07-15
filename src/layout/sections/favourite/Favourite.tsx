@@ -31,7 +31,7 @@ const FavouriteCardsData = [
 
 export const Favourite = () => {
     return (
-        <S.Favourite>
+        <S.Favourite id={'upcoming-packages'}>
             <Container>
                 <S.FavouriteWrapper>
                     <S.Fast>

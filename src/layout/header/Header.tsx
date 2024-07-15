@@ -6,7 +6,27 @@ import {Container} from "../../components/common/Container";
 import {NavBarMobile} from "./navBarMobile/NavBarMobile";
 import {S} from "./Header_Styles"
 
-const navBarItems = ["Home", "About", "Upcoming Packages"]
+export type navBarItemPropsType = {
+    title: string,
+    href: string
+}
+
+export const navBarItems = [
+    {
+        title: "Home",
+        href: "home"
+    },
+
+    {
+        title: "About",
+        href: "about"
+    },
+
+    {
+        title: "Upcoming Packages",
+        href: "upcoming-packages"
+    }
+]
 
 export const Header = () => {
 
@@ -25,9 +45,9 @@ export const Header = () => {
                 <S.ContentWrapper>
                     <Logo/>
                     {width < breakpoint ? <NavBarMobile navBarItems={navBarItems}/>
-                                        : <NavBarDesktop navBarItems={navBarItems}/>}
+                        : <NavBarDesktop navBarItems={navBarItems}/>}
 
-                    <Button type={"submit"} small>Get in Touch</Button>
+                    {width > breakpoint ? <Button type={"submit"} small>Get in Touch</Button> : null}
                 </S.ContentWrapper>
             </Container>
         </S.Header>

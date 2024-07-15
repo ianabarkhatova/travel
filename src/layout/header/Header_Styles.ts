@@ -9,6 +9,7 @@ const Header = styled.header`
     left: 0;
     right: 0;
     z-index: 99999;
+    width: 100vw;
     
     ${Button} {
         min-width: 152px;

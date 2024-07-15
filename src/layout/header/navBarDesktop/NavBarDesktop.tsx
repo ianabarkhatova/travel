@@ -1,25 +1,14 @@
 import React from 'react';
-import {DropdownHover} from "./dropdownHover/DropdownHover";
-import {S} from "./NavBarDesktop_Styles"
+import {S} from "../navBar/NavBar_Styles"
+import {navBarItemPropsType} from "../Header"
+import {NavBarItems} from "../navBar/NavBar";
 
-const dropdownHoverItems = ["Honeymoon Packages", "Tours Packages", "Musical Events", "Build Package"]
 
-export const NavBarDesktop = (props: { navBarItems: Array<string> }) => {
+export const NavBarDesktop = (props: { navBarItems: navBarItemPropsType[] }) => {
     return (
-        <S.NavBar>
-            <S.Ul>
-                {props.navBarItems.map((item, index) => {
-                    return (
-                        <S.ListItem key={index}>
-                            <S.Link href="#">{item}</S.Link>
-                            {/*{index === 1 && <DropdownHover dropdownHoverItems={dropdownHoverItems}/>*/}
-                            {/*}*/}
-                        </S.ListItem>
-                    )
-                })}
-                <DropdownHover dropdownHoverItems={dropdownHoverItems}/>
-            </S.Ul>
-        </S.NavBar>
+        <S.NavBarDesktop>
+            <NavBarItems/>
+        </S.NavBarDesktop>
     );
 };
 

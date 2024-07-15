@@ -13,7 +13,7 @@ const honeymoonData = [
 
 export const Honeymoon = () => {
     return (
-        <S.Honeymoon>
+        <S.Honeymoon id={"honeymoon-packages"}>
             <Container>
                 <S.ContentWrapper>
                     {honeymoonData.map((h,index) => {
