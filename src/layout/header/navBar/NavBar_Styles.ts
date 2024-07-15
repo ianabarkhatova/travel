@@ -1,7 +1,43 @@
-// Desktop
-
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {Link} from "react-scroll";
+
+//NavBar
+
+const NavLink = styled(Link)`
+    color: ${theme.colors.lightFont};
+    font-family: "Figtree", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover, &.active {
+        &::before {
+            height: 3px;
+            content: "";
+            display: inline-block;
+
+            background-color: ${theme.colors.accent};
+            border-radius: 34px;
+
+            position: absolute;
+            bottom: -2px;
+            left: 8px;
+            right: 8px;
+
+            @media ${theme.media.small} {
+                display: none;
+            }
+        }
+    }
+}
+`
+
+const ListItem = styled.li`
+    position: relative;
+`
+
+// NavBarDesktop
 
 const NavBarDesktop = styled.nav`
     max-width: 485px;
@@ -14,39 +50,12 @@ const NavBarDesktop = styled.nav`
         width: 100%;
     }
     
-    li {
-        position: relative;
+    ${ListItem} {
         white-space: nowrap;
-    }
-    
-    a {
-        color: ${theme.colors.lightFont};
-        font-family: "Figtree", sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-
-        &:hover {
-            &::before {
-                height: 3px;
-            }
-        }
-
-        &::before {
-            content: "";
-            display: inline-block;
-
-            background-color: ${theme.colors.accent};
-            border-radius: 34px;
-
-            position: absolute;
-            bottom: -2px;
-            left: 8px;
-            right: 8px;
-        }
     }
 `
 
-//Mobile
+//NavBarMobile
 
 const NavBarMobile = styled.nav`
 
@@ -64,41 +73,6 @@ const NavBarMobile = styled.nav`
             gap: calc(1vw + 10px);
         }
     }
-    
-    li {
-        position: relative;
-    }
-    
-    a {
-        color: ${theme.colors.lightFont};
-        font-family: "Figtree", sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-
-        &:hover {
-            &::before {
-                height: 3px;
-
-                @media ${theme.media.small} {
-                    display: none;
-                }
-            }
-        }
-
-        &::before {
-            content: "";
-            display: inline-block;
-
-            background-color: ${theme.colors.accent};
-            border-radius: 34px;
-
-            position: absolute;
-            bottom: 0;
-            left: 8px;
-            right: 8px;
-        }
-    }
-    
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`
@@ -163,7 +137,6 @@ const UlPopUp = styled.div<{isOpen: boolean}>`
     z-index: 99999;
     background-color: rgba(243, 243, 243, 0.6);
     backdrop-filter: blur(14px);
-    //width: 100vw;
     
     display: none;
     
@@ -174,10 +147,104 @@ const UlPopUp = styled.div<{isOpen: boolean}>`
     `}
 `
 
+//DropdownHover
+
+const DropdownHover = styled.li`
+    position: relative;
+    
+    ul {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: -16px;
+
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px 16px;
+        gap: 10px;
+        min-width: 228px;
+
+        background: rgba(217, 217, 217, 0.34);
+        border-radius: 16px;
+        backdrop-filter: blur(100px);
+    }
+
+    &:hover ul {
+        display: flex;
+
+        @media ${theme.media.small} {
+            display: none;
+        }
+    }
+`
+
+const DropdownLink = styled(Link)`
+    color: ${theme.colors.lightFont};
+    font-family: "Figtree", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+
+    &:hover {
+        &::before {
+            height: 3px;
+        }
+    }
+
+    &::before {
+        content: "";
+        display: inline-block;
+
+        background-color: ${theme.colors.accent};
+        border-radius: 34px;
+
+        position: absolute;
+        bottom: -4px;
+        left: 8px;
+        right: 8px;
+`
+
+const DropdownMenuLink = styled.a`
+    color: ${theme.colors.lightFont};
+    font-family: "Figtree", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+
+    position: relative;
+
+    &:hover {
+        &::before {
+            height: 3px;
+
+            @media ${theme.media.small} {
+                display: none;
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        display: inline-block;
+        background-color: ${theme.colors.accent};
+        border-radius: 34px;
+
+        position: absolute;
+        bottom: -3px;
+        left: 8px;
+        right: 8px;
+`
+
+
+
 export const S = {
     NavBarDesktop,
     NavBarMobile,
     BurgerButton,
     UlPopUp,
+    NavLink,
+    ListItem,
+    DropdownHover,
+    DropdownLink,
+    DropdownMenuLink,
 }
 

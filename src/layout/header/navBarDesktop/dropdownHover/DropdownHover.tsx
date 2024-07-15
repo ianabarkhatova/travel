@@ -1,5 +1,5 @@
 import React from 'react';
-import {S} from "./DropdownHover_Styles"
+import {S} from "../../navBar/NavBar_Styles"
 
 
 const dropdownHoverItems = [
@@ -24,12 +24,16 @@ const dropdownHoverItems = [
 export const DropdownHover = () => {
     return (
         <S.DropdownHover>
-            <S.Link href="#services">Services</S.Link>
+            <S.NavLink to={''}
+                       smooth={true}
+                       activeClass={'active'}
+                       spy={true}>Services
+            </S.NavLink>
             <ul>
                 {dropdownHoverItems.map((item, index) => {
                     return (
                         <S.ListItem key={index}>
-                            <S.DropdownLink href={`#${item.href}`}>{item.title}</S.DropdownLink>
+                            <S.DropdownMenuLink href={`#${item.href}`}>{item.title}</S.DropdownMenuLink>
                         </S.ListItem>
                     )
                 })}

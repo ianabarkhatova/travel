@@ -1,6 +1,7 @@
 import {DropdownHover} from "../navBarDesktop/dropdownHover/DropdownHover";
 import React from "react";
 import {navBarItems} from "../Header";
+import {S} from './NavBar_Styles'
 
 
 export const NavBarItems = () => {
@@ -8,11 +9,15 @@ export const NavBarItems = () => {
         <ul>
             {navBarItems.map((item, index) => {
                 return (
-                    <li key={index}>
-                        <a href={`#${item.href}`}>{item.title}</a>
+                    <S.ListItem key={index}>
+                        <S.NavLink to={item.href}
+                                   smooth={true}
+                                   activeClass={'active'}
+                                   spy={true}>
+                            {item.title}</S.NavLink>
                         {/*{index === 1 && <DropdownHover dropdownHoverItems={dropdownHoverItems}/>*/}
                         {/*}*/}
-                    </li>
+                    </S.ListItem>
                 )
             })}
             <DropdownHover/>

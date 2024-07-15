@@ -18,8 +18,8 @@ export const navBarItems = [
     },
 
     {
-        title: "About",
-        href: "about"
+        title: "Europe Tours",
+        href: "europe-tours"
     },
 
     {
