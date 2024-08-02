@@ -91,7 +91,7 @@ const FieldWrapper = styled.div`
         border-radius: 25px;
         transform: translate(-50%, -50%);
         top: 50%;
-        right: 0;
+        right: -4px;
 
         @media screen and (max-width: 880px) {
             display: none;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {S} from "../../navBar/NavBar_Styles"
 
 
@@ -22,8 +22,18 @@ const dropdownHoverItems = [
 ]
 
 export const DropdownHover = () => {
+
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const onDropdownLinkClick = () => {
+        setDropdownOpen(false);
+    };
+
     return (
-        <S.DropdownHover>
+        <S.DropdownHover
+            isDropdownOpen={isDropdownOpen}
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}>
+
             <S.NavLink to={''}
                        smooth={true}
                        activeClass={'active'}
@@ -33,7 +43,14 @@ export const DropdownHover = () => {
                 {dropdownHoverItems.map((item, index) => {
                     return (
                         <S.ListItem key={index}>
-                            <S.DropdownMenuLink href={`#${item.href}`}>{item.title}</S.DropdownMenuLink>
+                            <S.DropdownMenuLink to={item.href}
+                                                smooth={true}
+                                                activeClass={'active'}
+                                                spy={true}
+                                                onClick={onDropdownLinkClick}
+                            >
+                                {item.title}
+                            </S.DropdownMenuLink>
                         </S.ListItem>
                     )
                 })}

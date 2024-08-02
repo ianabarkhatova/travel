@@ -15,8 +15,6 @@ export const NavBarItems = () => {
                                    activeClass={'active'}
                                    spy={true}>
                             {item.title}</S.NavLink>
-                        {/*{index === 1 && <DropdownHover dropdownHoverItems={dropdownHoverItems}/>*/}
-                        {/*}*/}
                     </S.ListItem>
                 )
             })}

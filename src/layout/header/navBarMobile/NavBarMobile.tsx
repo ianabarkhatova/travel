@@ -6,7 +6,7 @@ import {NavBarItems} from "../navBar/NavBar";
 
 export const NavBarMobile = (props: { navBarItems: navBarItemPropsType[] }) => {
     const [menuIsOpen, setMenuIsOpen] = useState(false)
-    const onBurgerBtnClick = () => {  setMenuIsOpen( !menuIsOpen ) }
+    const onBurgerBtnClick = () => {setMenuIsOpen(!menuIsOpen)}
 
     return (
         <S.NavBarMobile>

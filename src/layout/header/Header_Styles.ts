@@ -4,12 +4,17 @@ import {theme} from "../../styles/Theme";
 
 const Header = styled.header`
     position: fixed;
-    padding: 50px 0;
+    padding-top: 50px;
     top: 0;
     left: 0;
     right: 0;
     z-index: 99999;
     width: 100vw;
+    backdrop-filter: contrast(0.5);
+
+    @media ${theme.media.small} {
+        backdrop-filter: none;
+    }
     
     ${Button} {
         min-width: 152px;

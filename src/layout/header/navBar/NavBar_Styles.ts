@@ -149,13 +149,13 @@ const UlPopUp = styled.div<{isOpen: boolean}>`
 
 //DropdownHover
 
-const DropdownHover = styled.li`
+const DropdownHover = styled.li<{isDropdownOpen: boolean}>`
     position: relative;
-    
+
     ul {
         display: none;
         position: absolute;
-        top: 100%; 
+        top: 100%;
         left: -16px;
 
         align-items: flex-start;
@@ -165,12 +165,15 @@ const DropdownHover = styled.li`
         min-width: 228px;
 
         background: rgba(217, 217, 217, 0.34);
-        border-radius: 16px;
+        border-radius: 5px;
         backdrop-filter: blur(100px);
+
+        ${props => props.isDropdownOpen && css<{isDropdownOpen: boolean}>`
+            display: flex;
+        `}
     }
 
     &:hover ul {
-        display: flex;
 
         @media ${theme.media.small} {
             display: none;
@@ -203,12 +206,13 @@ const DropdownLink = styled(Link)`
         right: 8px;
 `
 
-const DropdownMenuLink = styled.a`
+const DropdownMenuLink = styled(Link)`
     color: ${theme.colors.lightFont};
     font-family: "Figtree", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 16px;
+    cursor: pointer;
 
     position: relative;
 
