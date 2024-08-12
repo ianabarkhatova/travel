@@ -9,15 +9,15 @@ const dropdownHoverItems = [
     },
     {
         title: "Tours Packages",
-        href: "tours-packages"
+        href: "services"
     },
     {
-        title: "Musical Events",
-        href: "music-events"
+        title: "Resort Bookings",
+        href: "upcoming-packages"
     },
     {
-        title: "Build Package",
-        href: "build-package"
+        title: "Promotion",
+        href: "europe-tours"
     }
 ]
 
@@ -47,6 +47,7 @@ export const DropdownHover = () => {
                                                 smooth={true}
                                                 activeClass={'active'}
                                                 spy={true}
+                                                offset={-105}
                                                 onClick={onDropdownLinkClick}
                             >
                                 {item.title}

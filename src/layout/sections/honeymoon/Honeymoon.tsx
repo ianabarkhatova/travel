@@ -2,6 +2,7 @@ import React from 'react';
 import {Package} from "../../../components/package/Package";
 import {Container} from "../../../components/common/Container";
 import {S} from './Honeymoon_Styles'
+import {ImageBlock} from "../../../components/ImageBlock";
 
 const honeymoonData = [
     {
@@ -16,7 +17,8 @@ export const Honeymoon = () => {
         <S.Honeymoon id={"honeymoon-packages"}>
             <Container>
                 <S.ContentWrapper>
-                    {honeymoonData.map((h,index) => {
+                    <ImageBlock/>
+                    {honeymoonData.map((h, index) => {
                         return <Package
                             description={h.description} key={index}
                             title={h.title}

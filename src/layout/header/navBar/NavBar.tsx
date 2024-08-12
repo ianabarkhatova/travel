@@ -13,6 +13,7 @@ export const NavBarItems = () => {
                         <S.NavLink to={item.href}
                                    smooth={true}
                                    activeClass={'active'}
+                                   offset={-105}
                                    spy={true}>
                             {item.title}</S.NavLink>
                     </S.ListItem>
