@@ -25,7 +25,7 @@ function App() {
             <Promotion/>
             <Reviews/>
             <Footer/>
-            <GoTopBtn/>
+            {/*<GoTopBtn/>*/}
         </div>
     );
 }

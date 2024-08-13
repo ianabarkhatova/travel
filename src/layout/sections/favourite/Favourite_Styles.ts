@@ -29,7 +29,7 @@ const Fast = styled.div`
 const Trip = styled.div`
     flex: 1;
     max-width: 650px;
-    min-width: 800px; 
+    width: 100%; 
     min-height: 600px; 
     position: relative;
 
@@ -42,12 +42,13 @@ const Trip = styled.div`
 `
 
 const ImageOne = styled.img`
-    width: 500px;
+    max-width: 440px;
+    width: 100%;
     height: auto;
     object-fit: contain;
     position: absolute;
-    top: 0;
-    left: 42%;
+    top: -10%;
+    right: 0;
     z-index: 0;
 
     @media ${theme.media.small} {

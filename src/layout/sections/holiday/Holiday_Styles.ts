@@ -14,7 +14,7 @@ const ImageWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 10%;
-    
+
     max-width: 560px;
     width: 100%;
     max-height: 130px;
@@ -26,11 +26,12 @@ const ImageWrapper = styled.div`
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    
+
     &::after {
         content: "";
         display: inline-block;
-        width: 312px;
+        width: 100%;
+        max-width: 312px;
         height: 40px;
         background-image: url(${image2});
         background-size: cover;
@@ -38,6 +39,14 @@ const ImageWrapper = styled.div`
         position: absolute;
         left: 50%;
         bottom: calc(-22% + 1vw);
+
+        @media ${theme.media.small} {
+            left: 5%;
+        }
+
+        @media ${theme.media.small} {
+            width: 90%;
+        }
     }
 `
 

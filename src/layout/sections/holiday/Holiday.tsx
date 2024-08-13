@@ -6,9 +6,9 @@ import {S} from './Holiday_Styles'
 export const Holiday = () => {
     return (
         <S.Holiday>
-                    <S.ImageWrapper>
-                        <S.Image src={image1}/>
-                    </S.ImageWrapper>
+            <S.ImageWrapper>
+                <S.Image src={image1}/>
+            </S.ImageWrapper>
         </S.Holiday>
     );
 };
