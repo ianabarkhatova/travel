@@ -32,7 +32,7 @@ const ImageText = styled.span`
 
     ${font({
         weight: 700,
-        Fmax: 70,
+        Fmax: 60,
         Fmin: 32,
         color: theme.colors.darkSmallerFont
     })}

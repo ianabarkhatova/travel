@@ -38,7 +38,6 @@ const Trip = styled.div`
         align-items: center;
         min-width: 100%;
     }
-    
 `
 
 const ImageOne = styled.img`
