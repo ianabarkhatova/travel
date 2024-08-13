@@ -9,6 +9,7 @@ import {Promotion} from "./layout/sections/promotion/Promotion";
 import {Reviews} from "./layout/sections/reviews/Reviews";
 import {Footer} from "./layout/footer/Footer";
 import {Holiday} from "./layout/sections/holiday/Holiday";
+import {GoTopBtn} from "./components/goTopBtn/GoTopBtn";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Promotion/>
             <Reviews/>
             <Footer/>
+            <GoTopBtn/>
         </div>
     );
 }

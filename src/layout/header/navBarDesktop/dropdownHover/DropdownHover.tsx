@@ -34,8 +34,9 @@ export const DropdownHover = () => {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}>
 
-            <S.NavLink to={''}
+            <S.NavLink to={'services'}
                        smooth={true}
+                       offset={-105}
                        activeClass={'active'}
                        spy={true}>Services
             </S.NavLink>

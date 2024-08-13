@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {ImageBlock} from "../../../components/image-block/ImageBlock";
 
 const Promotion = styled.section`
     min-height: 790px;
@@ -38,9 +39,16 @@ const PromotionCardWrapper = styled.div`
     }
 `
 
+const StyledImageBlock = styled(ImageBlock)`
+    position: absolute;
+    top: 0;
+`
+
+
 export const S = {
     Promotion,
     ContentWrapper,
     PromotionWrapper,
     PromotionCardWrapper,
+    StyledImageBlock
 }

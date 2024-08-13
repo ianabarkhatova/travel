@@ -2,7 +2,9 @@ import React from 'react';
 import {Package} from "../../../components/package/Package";
 import {Container} from "../../../components/common/Container";
 import {S} from './Honeymoon_Styles'
-import {ImageBlock} from "../../../components/ImageBlock";
+import {ImageBlock} from "../../../components/image-block/ImageBlock";
+import coupleImage from './../../../assets/images/romantic/romantic-4.png'
+
 
 const honeymoonData = [
     {
@@ -17,7 +19,7 @@ export const Honeymoon = () => {
         <S.Honeymoon id={"honeymoon-packages"}>
             <Container>
                 <S.ContentWrapper>
-                    <ImageBlock/>
+                    <ImageBlock imageSource={coupleImage}/>
                     {honeymoonData.map((h, index) => {
                         return <Package
                             description={h.description} key={index}

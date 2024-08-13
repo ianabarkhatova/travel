@@ -7,6 +7,7 @@ const Honeymoon = styled.section`
 const ContentWrapper = styled.div`
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     @media ${theme.media.large} {
         flex-direction: column;

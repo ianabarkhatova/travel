@@ -11,6 +11,11 @@ const NavLink = styled(Link)`
     font-size: 16px;
     cursor: pointer;
 
+    @media ${theme.media.small} {
+        font-size: 25px;
+        
+    }
+
     &:hover, &.active {
         &::before {
             height: 3px;
@@ -135,7 +140,7 @@ const UlPopUp = styled.div<{isOpen: boolean}>`
     right: 0;
     bottom: 0;
     z-index: 99999;
-    background-color: rgba(243, 243, 243, 0.6);
+    background-color: rgba(223, 105, 81, 0.3);
     backdrop-filter: blur(14px);
     
     display: none;

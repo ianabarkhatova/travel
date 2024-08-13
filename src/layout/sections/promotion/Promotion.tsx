@@ -7,6 +7,9 @@ import image4 from "../../../assets/images/promotion/europe-4.webp"
 import {Container} from "../../../components/common/Container";
 import {PromotionCard} from "./promotionCard/PromotionCard";
 import {S} from './Promotion_Styles'
+import {ImageBlock} from "../../../components/image-block/ImageBlock";
+import image5 from '../../../assets/images/promotion/europe-5.webp'
+
 
 
 const promotionData = [
@@ -61,7 +64,11 @@ export const Promotion = () => {
                                                       price={p.price}/>
                             })}
                         </S.PromotionCardWrapper>
+
+
                     </S.PromotionWrapper>
+
+                    {/*<S.StyledImageBlock imageSource={image5}/>*/}
 
                 </S.ContentWrapper>
             </Container>
