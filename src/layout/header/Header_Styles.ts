@@ -11,7 +11,10 @@ const Header = styled.header`
     z-index: 99999;
     width: 100vw;
     backdrop-filter: contrast(0.5);
-    
+
+    @media ${theme.media.small} {
+        backdrop-filter: none;
+    }
     
     ${Button} {
         min-width: 152px;

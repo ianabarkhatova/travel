@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {ElementRef, useRef} from 'react';
 import {Logo} from "../../components/logo/Logo";
 import {Icon} from "../../components/icon/Icon";
 import {NavItemList} from "./footer-nav-bar/NavItemList";
 import {FooterSectionTitle} from "./footer-section-title/FooterSectionTitle";
 import {Button} from "../../components/common/Button";
 import {Container} from "../../components/common/Container";
-import {S} from './Footer_Styles'
+import {S} from './Footer_Styles';
+import emailjs from '@emailjs/browser';
 
 const SocialItemData = [
     {
@@ -28,6 +29,29 @@ const FooterNavBarDataTwo = ["Maldives", "Los Angeles", "Las Vegas", "Toronto"]
 
 
 export const Footer = () => {
+
+    const form = useRef<ElementRef<'form'>>(null);
+
+    const sendEmail = (e: any) => {
+        e.preventDefault();
+
+        if(!form.current) return
+
+        emailjs
+            .sendForm('service_q41tliw', 'template_pgc4pmm', form.current, {
+                publicKey: 'zwEIC6iuTTwb9LZuJ',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+        e.target.reset()
+    };
+
     return (
         <S.Footer>
             <Container>
@@ -69,8 +93,8 @@ export const Footer = () => {
                             Join Our Newsletter
                         </FooterSectionTitle>
 
-                        <S.Form>
-                            <S.Field placeholder={"Your email address"}></S.Field>
+                        <S.Form ref={form} onSubmit={sendEmail}>
+                            <S.Field required placeholder={"Your email address"} name={'email'}></S.Field>
                             <Button smaller type={"submit"}>Subscribe</Button>
                         </S.Form>
 
